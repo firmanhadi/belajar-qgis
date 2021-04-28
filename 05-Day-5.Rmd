@@ -1,0 +1,599 @@
+# (PART) Sistem Informasi Geografis {-}
+
+
+# Pengantar SIG
+
+## Definisi
+
+Akronim SIG mengacu pada *Sistem Informasi Geografis*, sebuah
+perangkat untuk bekerja dengan informasi geografis. SIG berkembang
+secara pesat mulai akhir tahun 1970-an baik secara teknis maupun
+kemampuan pengolahan data, dan kini telah banyak digunakan oleh
+banyak pihak untuk beragam keperluan analisis.
+
+- Seorang perencana hendak menganalisis sejauh mana
+perkembangan daerah urban dan menghitung laju populasi di
+daerah suburban.
+- Seorang biolog mungkin tertarik untuk mengetahui dampak
+praktik slash - and - burn terhadap populasi spesies amfibi di
+hutan pegunungan, untuk memahami ancaman kepunahan
+spesies tersebut dalam jangka panjang.
+- Seorang ahli bencana hendak mengidentifikasi daerah dengan
+resiko tinggi terkait dengan banjir musiman dengan menganalisis
+pola curah hujan dan karakteristik permukaan bumi (terrain).
+- Seorang ahli geologi teknik hendak mengidentifikasi lokasi terbaik
+untuk membangun gedung di daerah rawan gempa, dengan
+menggunakan informasi karakteristik formasi batuan.
+- Seorang ahli pertambangan ingin menentukan daerah tambang
+tembaga mana yang prospektif dipilih untuk eksplorasi lebih
+lanjut, berdasarkan variabel seperti luasan, kedalaman, dan
+kualitas tembaga.
+- Seorang teknisi geoinformatik yang bekerja untuk perusahaan
+telekomunikasi ingin menentukan lokasi mana yang paling baik
+untuk dijadikan sebagai stasiun relay, mempertimbangkan faktor
+biaya akuisisi lahan, undulasi permukaan dan lain-lain.
+- Semua profesional dalam contoh di atas bekerja dengan data yang
+terkait dengan lokasi di permukaan bumi, disebut dengan data
+spasial. Data spasial mengacu pada benda (obyek) apa ada di mana
+saat ini, atau mungkin, di masa lalu dan di masa datang.
+
+SIG adalah sebuah sistem berbasis komputer yang memiliki empat
+kemampuan di bawah ini untuk mengelola data bergeoreferensi
+(Aronoff, 1989):
+
+1. Persiapan dan akuisisi data
+2. Pengelolaan data, termasuk penyimpanan dan pemeliharaan
+3. Manipulasi data dan analisis
+4. Visualisasi dan pencetakan data
+
+Mengacu pada definisi tersebut, seorang pengguna dapat
+memanfaatkan sistem untuk memasukkan data, menganalisisnya
+dengan beragam metode, dan menghasilkan keluaran berupa peta
+atau lainnya dengan data tersebut. Sistem juga mendukung beragam
+sistem koordinat dan transformasi peta, dan memberikan keleluasaan
+pada pengguna untuk bekerja dengan beragam skema warna, simbol
+dan medium yang digunakan.
+
+SIG adalah 
+
+- sebuah sistem untuk mengelola data geografis.
+  - Informasi tentang bentuk dari obyek.
+  - Informasi tentang atribut dari obyek.
+  - Variasi spasial yang bersifat kontinu dari obyek, misalnya, suhu
+permukaan tanah, kelembaban tanah dsb.
+
+- Sebuah sistem untuk melakukan analisis dan melakukan
+pemodelan hubungan spasial.
+  - Statistik spasial
+  - Agregasi dan reklasifikasi dari data observasi
+  - Pembuatan model statistik dan implementasinya
+
+-   Sebuah sistem untuk menampilkan dan meringkas informasi
+geografis melalui grafis
+    - Peta
+    - Tabel
+    - Grafik
+    - Animasi 2D dan 3D (2.5D ? )
+
+SIG adalah sebuah basis data spasial.
+
+```{r figs1, fig.cap='Basis Data Spasial',echo=FALSE, message=FALSE, warning=FALSE, out.width='50%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("4/1.png")
+```
+
+
+SIG digunakan untuk membantu pengguna menganalisis serta
+memahami proses dan fenomena di dunia nyata. Proses ini disebut
+dengan pemodelan atau membangun suatu representasi dengan
+karakteristik tertentu di dunia nyata.
+
+```{r figs2, fig.cap='Abstraksi dunia nyata',echo=FALSE, message=FALSE, warning=FALSE, out.width='50%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("img/abstraksi.png")
+```
+
+Pemodelan adalah sebuah proses untuk menghasilkan abstraksi dari
+dunia nyata sehingga beberapa bagiannya dapat dianalisis dengan
+lebihmudah.
+
+## Tipe Data
+
+
+```{r figs3, fig.cap='Tipe data',echo=FALSE, message=FALSE, warning=FALSE, out.width='50%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("4/2.png")
+```
+## Sistem koordinat, skala dan resolusi
+
+
+
+# Visualisasi Data di QGIS
+
+
+
+Mengumpulkan dan mengatur data dari sumber yang berbeda hanya setengah dari pekerjaan. Langkah selanjutnya adalah mempresentasikannya di peta, mengungkapkan konten dan fitur tematik secara akurat. Untuk tujuan ini, berbagai teknik desain visual, atau lapisan penataan berdasarkan atributnya, digunakan dalam GIS. QGIS memiliki kemampuan visualisasi kartografi dan penataan data yang luas dan fleksibel.
+
+Di bagian ini, kita akan membahas topik dan keterampilan berikut:
+
+```
+- Contoh-contoh bagus dalam organisasi data dalam sebuah dokumen kerja tunggal (project)
+
+- Representasi visual dari data, menggambarkan fitur tematik dan spasialnya
+
+- Pelabelan layer, yang dilakukan untuk meningkatkan keterbacaan data
+
+- Mengatur style 
+
+- Peta dasar untuk menyediakan konteks spasial dan sebagai latar belakang data Anda
+```
+
+Hasil utama dari bagian ini adalah proyek, yang dirancang sesuai dengan persyaratan dasar visualisasi kartografi.
+
+### Grouping dan Ordering
+
+Secara default, layer dimuat dalam urutan abjad (terbalik jika Anda menambahkannya dari panel browser). Setiap layer baru diletakkan di atas layer sebelumnya dan menutupinya. Semua layer ditampilkan secara default, ditata dengan simbol seragam sederhana, dan diberi warna acak. Ini adalah alasan ketika orang yang berbeda memvisualisasikan data sama, akan melihat warna yang berbeda. Urutan layer dapat diubah hanya dengan menyeret dan meletakkannya ke atas dan ke bawah legenda. Juga disarankan untuk memesan dan mengatur lapisan dalam beberapa kelompok logis, menyederhanakan navigasi dan pemahaman data. Khususnya dalam istilah GIS, lapisan bawah akan berupa fitur raster atau poligon. Di atas poligon akan ada fitur garis dan kemudian fitur titik di bagian atas.
+
+Untuk mengelola dan mengatur ulang layer dan mempertahankan visibilitasnya, gunakan menu **Layer**  di panel **Layers**, yang diperlihatkan oleh screenshot berikut dan berisi tombol-tombol yang dijelaskan sesudahnya (sesuai urutan tampilan dari kiri ke kanan):
+
+```{r fig91, fig.cap='Layer Toolbar',echo=FALSE, message=FALSE, warning=FALSE, out.width='30%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/09/fig91.jpeg")
+```
+
+
+- **Tambah Grup** : Tombol ini akan membuat grup layer yang kosong.
+
+- **Mengelola visibilitas Layer** : Tombol ini memungkinkan kita untuk dengan cepat menampilkan dan menyembunyikan layer dan juga menyesuaikan visibilitasnya dengan kombinasi layer yang telah ditentukan — yang disebut preset.
+
+- **Filter Legenda Menurut Konten Peta** : Jika filter aktif, legenda layer hanya menunjukkan item-item yang benar-benar terlihat di dalam kanvas peta. Semua simbol lainnya disembunyikan dari legenda.
+
+- **Rentangkan Semua / Tutup Semua** : Tombol digunakan untuk membuka atau menutup lapisan, legenda simbologi, dan grup lapisan, jika ada.
+
+- **Remove Layer / Group** : Menghapus entri legenda yang dipilih.
+
+
+Ada dua cara membuat grup layer:
+
+Klik pada ikon tombol **Add Group**, dari Layers toolbar. Grup baru akan muncul di bagian bawah daftar layer. Ketikkan nama yang sesuai lalu seret dan letakkan lapisan ke dalam grup. Hati-hati jika Anda menyorot grup tertentu, itu akan membuat Sub-grup baru di bawah grup yang aktif. Jika ini terjadi, Anda dapat menyeret sub-grup untuk menjadikannya sebagai grup.
+
+Pilih beberapa layer sambil menahan tombol Ctrl, dan gunakan pintasan kontekstual klik kanan **Group Selected** untuk menempatkannya dalam satu grup.
+
+Dimungkinkan untuk mengembangkan hierarki bertingkat dengan subkelompok dengan memilih grup dan menerapkan Add Group . Item apa pun dari legenda lapisan, apakah itu layer tunggal atau grup, dapat diganti namanya dengan klik kanan **Rename**. Mengganti nama tidak memengaruhi dataset itu sendiri, tetapi memungkinkan kita memberikan nama yang tepat dan bermakna dalam suatu proyek. Sekarang coba atur sendiri layer-layer itu menjadi beberapa grup yang bermakna, dan beri nama dengan tepat.
+
+### Styling
+
+Dalam QGIS, style adalah cara visualisasi kartografi yang memperhitungkan fitur individu dan tematik layer. Ini mencakup karakteristik dasar simbologi, seperti warna dan isian, parameter outline, penggunaan marker, rendering tergantung skala, transparansi lapisan, interaksi dengan lapisan lain, dan pelabelan.
+
+Style yang dipilih dengan baik menyederhanakan persepsi dan keterbacaan data, sehingga penting untuk mempelajari cara bekerja dengan style agar dapat mewakili data Anda dengan cara terbaik. Dalam istilah sederhana, pelajari cara membuat peta yang “eye-catching”. Pada bagian ini, kita akan membahas layer vektor dan raster secara terpisah, karena stilisasi mereka memiliki beberapa fitur unik.
+
+
+#### Vektor
+
+Menu **Style** dari dialog **Layer Properties** menyediakan Anda dengan semua alat yang diperlukan untuk melambangkan dan menampilkan data Anda dengan style tertentu. Untuk membukanya, klik dua kali pada nama layer di panel **Layers**, atau gunakan klik kanan dan pilih **Properties**, pilih bagian **Style**. Anda akan melihat sesuatu yang mirip dengan \@ref(fig:fig92).
+
+```{r fig92, fig.cap='Layer Property',echo=FALSE, message=FALSE, warning=FALSE, out.width='30%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/09/fig92.png")
+```
+
+Hal pertama yang harus Anda fokuskan adalah **Renderer** kecil di sudut kiri atas, yang berisi item-item berikut:
+
+- **Single Symbol** : Ini adalah tipe paling sederhana yang menggambar semua fitur layer dengan simbol yang sama.
+
+- **Categorized** : Ini mendefinisikan kategori yang digerakkan oleh data, membuatnya dilambangkan secara individual.
+
+- **Graduated** : Ini mendefinisikan kategori berdasarkan atribut kuantitatif, fitur dapat diberi peringkat secara bertahap.
+
+- **Rule-based** : Ini adalah tipe renderer yang paling fleksibel dan canggih. Hal ini memungkinkan pengguna untuk mendefinisikan kategorinya sendiri menggunakan beberapa kriteria dan style mereka secara individual.
+
+- **Point displacement** : Penyaji ini berguna saat Anda bekerja dengan lapisan titik yang berisi titik-titik yang tumpang tindih yang memiliki koordinat yang sama atau berada terlalu dekat satu sama lain. Ini hanya tersedia untuk layer titik tunggal, dan secara otomatis akan menggeser lokasi marker sehingga semua marker yang tumpang tindih terlihat.
+
+- **Inverted polygons** : Ini digunakan untuk memberi style pada bagian luar poligon, dan hanya tersedia untuk lapisan poligon saja.
+
+- **Heatmap** : Ini mewakili lapisan titik dengan permukaan kontinu sesuai dengan kerapatan titik, tersedia untuk lapisan titik saja.
+
+Setelah jenis penyaji dipilih, Anda dapat mulai menyesuaikan simbologi dengan dialog pemilih Simbol , yang aksesibilitasnya tergantung pada jenis penyaji yang dipilih. Misalnya, untuk simbol tunggal dan renderer poligon terbalik, dialog ini tersedia langsung dari bagian style . Untuk penyaji **Graduated** dan **Categorized**, tersedia dari tombol Ubah Simbol, yang terlihat seperti ini:
+
+
+```{r fig92a, fig.cap='Layer Property',echo=FALSE, message=FALSE, warning=FALSE, out.width='30%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/09/fig92.jpeg")
+```
+
+
+**Rule-based**, **point displacement** dan **Heatmap** memiliki spesifikasi sendiri untuk pemilihan dan penyesuaian simbologi, yang akan dibahas pada bagian berikut. Namun demikian, terlepas dari jenis renderer yang dipilih (kecuali renderer Heatmap ), Anda selalu memiliki akses ke dialog pemilih Simbol, yang terlihat mirip dengan apa yang ditunjukkan pada Gambar \@ref(fig:fig93) dan terdiri dari beberapa bagian.
+
+
+```{r fig93, fig.cap='Pemilih simbol',echo=FALSE, message=FALSE, warning=FALSE, out.width='30%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/09/fig93.png")
+```
+
+Di bagian kanan atas jendela, Anda dapat melihat pratinjau simbol. Di bawah pratinjau, ada lapisan simbol. Secara default, hanya satu layer yang digunakan, tetapi Anda dapat menambahkan lebih banyak dengan tombol layer **Add symbol**, atau menghapus layer yang tidak perlu dengan tombol **Remove symbol layer**, yang hanya aktif jika ada dua atau lebih lapisan yang tersedia. Dengan tombol **Lock layer's color**, warna layer akan dikunci untuk perubahan, yang mencegah warna dari modifikasi oleh renderer *categorized* atau *graduated*. Layers dapat disusun ulang dengan tombol Move up () dan Move down (), dan jika Anda puas dengan hasilnya, gunakan tombol **Save**.
+
+Di sisi kanan jendela dialog, ada opsi yang tersedia untuk lapisan simbol yang dipilih. Di antaranya, **Symbol layer type** adalah yang paling penting. Daftar jenis yang tersedia tergantung pada geometri layer. Untuk layer poligon, Anda dapat memilih dari daftar berikut:
+
+- **Centroid Fill** : Poligon dilambangkan dengan spidol pada centroid poligon, alih-alih merender seluruh area poligon. Ini berguna jika Anda memiliki banyak poligon kecil yang lebih baik untuk divisualisasikan pada suatu titik daripada oleh poligon kecil yang terlihat hanya setelah di-zoom-in.
+
+- **Gradient fill** : Menggunakan gradien yang telah ditentukan atau membuat gradien khusus untuk mengisi poligon.
+
+- **Line pattern fill**: Pola garis dapat dikombinasikan untuk menciptakan berbagai *hatching effect*. Efek ini berguna ketika Anda ingin menggunakan warna isian yang sama di bawahnya tetapi ingin menyorot beberapa perbedaan antara objek dengan ***hatching***.
+
+- **Point pattern fill** : Titik yang didistribusikan secara teratur (atau simbol lainnya) dapat mengisi poligon dan membuat pola.
+
+- **Raster image fill** : Gambar raster apa saja dapat digunakan untuk membuat tekstur atau pola yang mengisi latar belakang.
+
+- **SVG fill** : File vektor .svg yang dapat diskalakan (atau marker) dapat digunakan untuk membuat tekstur atau pola pengisian.
+
+- **Shapeburst fill** : Gradasi keabuan dari interior poligon, tergantung pada jarak dari tepi poligon, dan menciptakan efek penyangga batas yang tidak umum.
+
+- **Simple fill** : Ini tipe default, dan ditandai oleh warna isi, pola, dan garis tepi.
+
+- **Outline** : marker line: Simbol penanda digunakan sebagai outline.
+
+- **Outline** : Simple line: Hanya outline poligon yang digambar dan sifat-sifatnya ditentukan oleh warna garis, lebar, dan style.
+
+Untuk layer titik, Anda dapat memilih berbagai jenis marker yang diwakili oleh **Ellipse** , huruf atau tanda (**Font marker**), ragam penanda (**Simple marker**), ikon(**SVG marker**), atau nilai kolom atribut (**Vector field marker**).
+
+Untuk layer garis, tipe tersedia **Simple line** dan **Marker line**. Dalam kasus pertama, garis digambarkan seperti biasa, dan dalam kasus kedua, simbol simbol marker digunakan secara berulang. **Marker line** dapat digunakan, misalnya, untuk menunjukkan arah garis (gerakan di jalan, aliran sungai, dan sebagainya) dengan simbol penanda panah.
+
+Setelah membahas dasar-dasarnya, kita akan mengeksplorasi style render yang berbeda dalam contoh beberapa layer dari basis data kita.
+
+**Styling layer dengan renderer Single Symbol**
+
+Dalam contoh ini, kita akan menggunakan lapisan layer Admin untuk menunjukkan wilayah pekerjaan (Area of Interest) di peta. Seperti yang dapat Anda lihat di screenshot berikut, kami menggunakan dua simbol layer, keduanya didefinisikan sebagai Outline: **Simple line**, tetapi dengan pola style **Pen Style** berbeda . Di bawahnya, kami menempatkan **Solid line** yang lebih terang dan menutupinya dengan style **Dash Line** yang lebih gelap . Memilih warna kontras memungkinkan kita untuk menerapkan efek garis seperti pada gambar.
+
+```{r fig94, fig.cap='Memilih simbol',echo=FALSE, message=FALSE, warning=FALSE, out.width='60%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/09/fig94.png")
+```
+
+
+**Styling layer dengan renderer Categorized**
+
+Mari kita style lapisan zona Taman Nasional Hin Nam No, yang memiliki dua kategori, (1) TPZ dan (2) CUZ.
+
+1. Setelah mengatur jenis penyaji ke Dikategorikan, pilih kolom dengan kategori yang akan diberikan di bawah Kolom. Kolom tersedia dari daftar turun bawah yang berisi semua bidang atribut lapisan. Karena kami ingin zona ditampilkan sebagai kategori, pilih bidang Zona untuk mengategorikan lapisan.
+
+```{r fig95, fig.cap='Memilih simbol',echo=FALSE, message=FALSE, warning=FALSE, out.width='30%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/09/fig95.png")
+```
+
+1. Klik pada tombol **Symbol Change** untuk menyesuaikan simbologi layer. Di jendela pemilih Simbol, atur Symbol layer type ke **Categorized**.
+
+2. Klik tombol OK untuk kembali ke jendela utama.
+
+3. Klik pada tombol **Classify**. Jendela dengan kolom **Symbol**, **Value** dan **Legend** akan secara otomatis diisi dengan kategori dan deskripsi mereka dari bidang atribut. Perbedaan antara **Value** dan **Legend** adalah bahwa nilai mewakili atribut yang unik, sementara legenda memberikan karakteristik deskriptif mereka. Akan terlihat lebih jelas ketika nilai, misalnya, berisi kode dan legenda yang menjelaskan maknanya. Selain itu, dapat juga diatur hingga nilai tidak terlihat dalam legenda layer, tetapi hanya deskripsi saja. Anda dapat menambah atau menghapus kategori, atau secara manual mengedit teks elemen-elemennya (Value atau Legend) dengan mengklik dua kali pada item di kolom yang relevan. Untuk saat ini, cukup klik **OK** untuk keluar dari dialog **Style** dan lihat hasil awal.
+
+Screenshot ini menunjukkan yang akan terjadi jika Anda memilih renderer **Categorized**.
+
+```{r fig96, fig.cap='Memilih simbol',echo=FALSE, message=FALSE, warning=FALSE, out.width='60%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/09/fig96.png")
+```
+
+**Styling layer dengan renderer Graduated**
+
+Jenis renderer **Graduated** berguna ketika Anda ingin menampilkan fitur berdasarkan beberapa atribut kuantitatif. Dataset titik desa kita berisi kolom tentang populasi di kolom ***pop***. Perhatikan bahwa nilai bidang pop dibuat secara acak untuk tujuan pelatihan.
+
+1. Memuat shapefile desa.
+
+2. Klik dua kali layer dan pilih **Properties**.
+
+3. Pilih **Symbology** dan atur jenis renderer ke **Graduated** dan pilih bidang **pop** di bagian Kolom.
+
+4. Karena data adalah fitur titik, pilih **Size** sebagai metodenya.
+
+5. Tentukan jumlah kelas yang ingin Anda tampilkan (biasanya, lima hingga tujuh kelas direkomendasikan, jika tidak, akan sulit untuk membedakannya secara visual).
+
+6. Kemudian, pilih mode kelulusan yang sesuai, yaitu sebagai berikut:
+
+- **Equal interval** : Rentang nilai dibagi ke dalam kelas rentang yang sama sesuai dengan jumlah kelas yang ditetapkan (misalnya, nilai dari 0 hingga 100 dibagi menjadi lima kelas masing-masing 20 unit).
+
+- **Quantile (Equal Count)** : Semua data akan dibagi ke dalam jumlah kelas yang ditetapkan, dan rentang akan dipilih sedemikian rupa sehingga setiap kelas akan berisi jumlah item yang sama.
+
+- **Natural Breaks (Jenks)** : Metode ini mengelompokkan nilai berdasarkan kesamaannya. Jadi nilai dalam suatu kelas memiliki varians minimum, tetapi nilai fitur di seluruh kelas sangat bervariasi.
+
+- **Standard Deviation** : Kelas dibagi sesuai dengan standar deviasi dari nilai-nilai, dan ini menunjukkan bagaimana data berbeda dari nilai rata-rata.
+
+- **Pretty Breaks** : Ini menciptakan n + 1 kelas untuk rentang nilai yang diberikan (yaitu, jika 5 kelas ditetapkan, jumlah yang dihasilkan akan 6), mirip dengan **Interval Equal**, tetapi titik-titik pemisahan dipilih sehingga nilai-nilai dibulatkan dengan baik angka (misalnya, kelipatan 10 jika menggunakan bilangan bulat).
+
+7. Setelah mengklik tombol **Classify**, kolom Symbol, Value, dan Legend akan diisi. Klik dua kali pada semua ini untuk memodifikasinya. Mengklik kanan membuka menu kontekstual. Anda dapat mencoba berbagai kelas dan klasifikasi untuk memutuskan mana yang terbaik untuk menampilkan fitur data.
+
+```{r fig97, fig.cap='Memilih simbol',echo=FALSE, message=FALSE, warning=FALSE, out.width='30%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/09/fig97.png")
+```
+
+```{r fig98, fig.cap='Memilih simbol',echo=FALSE, message=FALSE, warning=FALSE, out.width='30%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/09/fig98.png")
+```
+
+**Styling layer dengan renderer Heatmap**
+
+**Heatmap** adalah jenis renderer yang relatif baru. Itu diperkenalkan di QGIS 2.8. Ini mewakili titik sebagai permukaan dengan kerapatan kontinu dan memungkinkan kita untuk menerapkan efek style yang keren.
+
+Kami akan menerapkan penyaji ke layer **villages_utm**, dan overlay hasilnya dengan batas Taman Nasional Hin Nam No.
+
+Setelah memilih jenis renderer Heatmap dari daftar drop-down, pilih jalur warna yang telah ditetapkan untuk lapisan yang disebut OrRd (dari Oranye ke Merah). Jika Anda tidak puas dengan jalur warna, Anda dapat memodifikasinya dengan mengklik tombol **Edit** di sebelahnya, atau membuat jalur warna Anda sendiri dengan memilih Jalur warna baru dari bagian paling akhir daftar, dan akhirnya Balikkan jalur warna jika ada adalah suatu kebutuhan.
+
+Radius menentukan area pencarian untuk estimasi kepadatan. Pada dasarnya ini menggambarkan seberapa dekat titik yang harus dimiliki satu sama lain untuk mempengaruhi peta panas. Semakin besar jari-jarinya, semakin halus permukaannya; dan semakin kecil jari-jarinya, semakin halus detail di peta panas. Anda dapat menentukan jari-jari suatu titik dalam unit yang berbeda: Pixel , Milimeter , atau unit Peta . Ingat bahwa unit peta tergantung pada skala. Piksel dan milimeter berubah terlepas dari skala, tetapi juga mencerminkan efek pembesaran.
+
+Nilai maksimum biasanya ditetapkan secara otomatis dan bertanggung jawab atas kepadatan maksimum poin per unit area, tetapi Anda dapat menyesuaikannya dengan kebutuhan Anda.
+
+Selain itu, Anda dapat menggunakan titik Bobot berdasarkan bidang numerik untuk berjaga-jaga seandainya Anda ingin lapisan mencerminkan beberapa informasi penting selain kerapatan. Misalnya, jika kita memiliki data yang relevan, kita dapat menimbang sekolah dengan jumlah siswa, atau kafe dengan jumlah pengunjung per bulan.
+
+_**Slider kualitas rendering**_ digunakan untuk mengatur kehalusan permukaan. Semakin tinggi kualitas yang Anda pilih, semakin lambat proses rendernya, sementara permukaan yang lebih kasar dirender lebih cepat.
+
+Render lapisan
+
+Apapun jenis rendering yang Anda pilih, selalu ada opsi rendering Layer yang sama di bagian bawah jendela dialog Style. Yang pertama adalah slider persentase transparansi Layer umum. Anda dapat memindahkannya untuk menyesuaikan transparansi lapisan. Mode blending layer memberikan beberapa efek grafis khusus untuk layer yang Anda gunakan untuk berinteraksi dengan layer bawah (atau layer). Secara default, mode Normal diatur, yang berarti bahwa lapisan di bawahnya tersembunyi di bawahnya tanpa pencampuran warna dengan lapisan penutup. Ini ditulis sebagai (a, b) = a, di mana a adalah lapisan atas dan b adalah lapisan bawah. Anda dapat memilih di antara 12 mode campuran yang berbeda yang dibagi menjadi empat kelompok.
+
+Mode pencampuran fitur menerapkan efek yang sama ke fitur yang tumpang tindih dalam lapisan. Kami menyarankan Anda untuk mencoba berbagai mode yang berbeda untuk memahami cara kerjanya dengan tipe data dan opsi penataan yang berbeda. Mengenalnya memungkinkan Anda membuat peta yang tampak profesional dengan efek desain kartografi yang memukau.
+
+```{r fig99, fig.cap='Memilih simbol',echo=FALSE, message=FALSE, warning=FALSE, out.width='30%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/09/fig99.png")
+```
+
+```{r fig9100, fig.cap='Memilih simbol',echo=FALSE, message=FALSE, warning=FALSE, out.width='30%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/09/fig9100.png")
+```
+
+Mengembangkan style untuk layer raster
+
+Dataset kami berisi tiga lapisan raster: landcover 2010 , lidar_dem , dan hillshade . Semua ini adalah turunan penginderaan jauh yang berguna untuk mewakili fitur penggunaan lahan dan bantuan. Kami akan mengembangkan style bagi mereka untuk mewakili DEM sebagai lapisan berkelanjutan, dan menggabungkannya dengan hillshade untuk mendapatkan beberapa efek kartografi semi-3D. Lapisan landcover 2010 akan digunakan untuk menunjukkan cara bekerja dengan himpunan kelas diskrit.
+
+Pertama, mari kita beri style pada layer landcover 2010 yang berisi beberapa kelas landcover. Ini dikodekan oleh nilai integer yang dijelaskan dalam metadata sebagai berikut:
+
+1: tree canopy
+
+2: grass/shrub
+
+3: bare earth
+
+4: water
+
+5: buildings
+
+6: roads
+
+7: other paved surfaces
+
+Mari kembangkan style dengan melakukan langkah-langkah berikut:
+
+Buka tab Style dari jendela dialog Properties (klik dua kali pada layer dalam legenda, atau pilih Properties klik kanan kontekstual shortcut).
+
+Tetapkan Singleband pseudocolor sebagai tipe Render. Karena raster kami hanya memiliki satu band, maka akan dimuat secara otomatis sebagai Band 1 (Abu-abu) dalam daftar drop-down Band.
+
+Saat kami bekerja dengan kelas tutupan lahan diskrit, kami menuju ke Interpolasi warna | Diskrit.
+
+Sekarang kita perlu menambahkan kelas kita ke jendela legenda. Gunakan tombol Tambahkan nilai secara manual, +, untuk menambahkan kelas.
+
+Secara default, semua kelas diberi nilai 0, Warna yang sama, dan entri peta warna khusus alih-alih Label. Anda dapat mengubahnya dengan mengklik dua kali pada item koresponden. Setelah selesai, bagian Style Anda akan terlihat mirip dengan apa yang diperlihatkan dalam tangkapan layar berikut:
+
+```{r fig911a, fig.cap='Memilih simbol',echo=FALSE, message=FALSE, warning=FALSE, out.width='30%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/09/fig911.jpg")
+```
+
+Untuk layer lidar_dem, di bagian Style, pilih Render type as Singleband pseudocolor.
+
+Pita akan diatur secara otomatis, dan dalam hal nilai yang berubah dengan mulus seperti pada DEM, biarkan opsi Linear default (di bawah Interpolasi warna) tidak dapat diubah.
+
+Sekarang, kita perlu memilih ramp warna yang sesuai untuk konten tematik layer. Daftar drop-down landai yang telah ditentukan tidak menunjukkan semua keragaman yang tersedia. Untuk mendapatkan ini, pilih Tanjakan warna baru. Dari daftar drop-down Color ramp type type, pilih cpt-city. Anda akan diperlihatkan semua jalur warna standar yang tersedia, diurutkan menjadi beberapa kelompok tematik.
+
+Klik pada grup *Topografi*, pilih jalan elevasi (atau jalan lain yang Anda suka), dan klik tombol OK.
+
+Kami akan diminta memasukkan nama untuk jalur warna baru. Klik OK karena kami puas dengan yang sudah ada. Lalu, kita akan kembali ke jendela Style utama.
+
+Arahkan ke Mode | Terus menerus , dan QGIS akan membuat kelas setelah Anda mengklik tombol Klasifikasi. Rentang nilai min / maks di mana kelas-kelas ini akan dibuat didefinisikan di bagian Muat nilai min / maks dengan opsi berikut, seperti yang ditunjukkan pada tangkapan layar berikut:
+
+Pemotongan jumlah kumulatif:
+Secara default, ini diatur ke 2-98 persen dari rentang data dan membantu memotong pencilan data yang sangat rendah atau sangat tinggi. Memilih jenis pengaturan rentang data ini, gambar awal memperoleh lebih banyak kontras dan lebih baik mencerminkan perbedaan dalam nilai data.
+
+Min / maks:
+Seluruh rentang data diperhitungkan, tetapi peta yang dihasilkan mungkin terlihat membosankan.
+
+Berarti +/- standar deviasi ×:
+Nilai dalam deviasi standar yang diberikan (atau penyimpangan) menentukan rentang data.
+
+```{r fig912a, fig.cap='Memilih simbol',echo=FALSE, message=FALSE, warning=FALSE, out.width='30%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/09/fig912.jpg")
+```
+
+Untuk memuat nilai menurut mode rentang data yang ditentukan, pilih Aktual (lebih lambat) di opsi bagian Akurasi dan klik tombol Muat. Bergantung pada dataset, mungkin perlu waktu, dan ketika Anda melihat bahwa nilai Min dan Max di bawah jalur warna dan Mode diperbarui, klik tombol Klasifikasi. Di jendela di sebelah kiri, Anda akan melihat kelas dan rentangnya diatur secara otomatis dalam rentang data yang ditentukan. Ini sesuai dengan ramp warna yang dipilih. Penting untuk dipahami bahwa setiap nilai mewakili batas maksimum kelas, dan nilai tertinggi bukanlah nilai maksimum riil dari dataset, tetapi jumlah maksimum kumulatif. Anda dapat menyesuaikan nilai dengan mengklik dua kali pada nilai tersebut dan mengetik nilai integer, dan memperjelas legenda dengan memasukkan rentang alih-alih nilai tunggal.
+
+Akhirnya, mari kita style raster hillshade untuk mengungkapkan detail dan kekasaran lega. Sebelum memulai, pastikan bahwa layer di atas lidar_dem, dan jika tidak, seret dan letakkan dengan benar. Hill-shading mensimulasikan bagaimana sinar matahari menerangi medan. Menggabungkannya dengan DEM adalah pendekatan yang sangat populer dalam visualisasi kartografi untuk menerapkan efek semi-3D dan menyoroti detail bantuan. Secara konvensional, naungan bukit semi-transparan dilapis di atas lapisan medan untuk mencapai hal ini. Hasilnya, visualisasi medan akhir kehilangan kontras warna dan menjadi kusam. Untuk mengatasinya, pertama-tama kita akan memindahkan penggeser transparansi Global ke 50 persen di bagian Transparansi di bawah properti Layer, dan di bagian style, pilih Multiply dari daftar drop-down Blending mode. Jika Anda tidak yakin tentang apa yang sebenarnya terjadi, coba terapkan Mode pencampuran normal menggunakan Terapkan, lalu kembali ke Multiply. Tangkapan layar berikut menunjukkan perbedaan:
+
+```{r fig913, fig.cap='Memilih simbol',echo=FALSE, message=FALSE, warning=FALSE, out.width='30%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/09/fig913.jpg")
+```
+
+Screenshot sebelumnya menunjukkan gabungan hillshade dan layer DEM menggunakan transparansi 50 persen sederhana (di atas) dan mode blending layer Multiply dengan transparansi 50 persen (di bawah).
+
+### Pelabelan
+
+
+Pelabelan adalah bagian penting dari visualisasi kartografi. Ini secara signifikan meningkatkan keterbacaan dan pemahaman data. Perhatikan bahwa pelabelan hanya berlaku untuk layer vektor karena mengandung landmark dan atribut (biasanya nama) untuk ditampilkan pada peta. Anda dapat mencapai bagian Label dari dialog Layer Properties atau dengan masuk ke Layer | Menu pelabelan . Juga, ada bilah alat Label yang dapat Anda aktifkan atau nonaktifkan dengan mengklik kanan pada menu kontekstual panel panel dan gunakan untuk akses cepat ke opsi pelabelan.
+
+Jika Anda ingin menambahkan label ke layer Anda dengan cepat, cukup nyalakan opsi Label this layer with, pilih bidang atribut yang akan digunakan untuk memberi label dari daftar drop-down di sebelahnya, dan klik OK. Label akan ditambahkan segera ke layer. Meskipun ini berfungsi baik untuk penggunaan pribadi dan sementara, ada banyak opsi pelabelan lain yang tersedia untuk properti label berikut:
+
+Teks : Ini mendefinisikan properti utama dari style teks, seperti Font, Ukuran, Warna, Jenis huruf, dan sebagainya
+
+Pemformatan : Ini digunakan untuk mengatur dan memformat label sebagai beberapa baris
+
+Buffer : Text buffering mendefinisikan properti dari halo buffer seperti ukuran, warna, transparansi, dan sebagainya
+
+Latar Belakang : Mereka berisi opsi latar belakang untuk label seperti bentuk, ukuran, warna latar belakang, dan banyak lagi
+
+Bayangan : Ini adalah opsi bayangan untuk label dan latar belakang
+
+Penempatan : Ini adalah opsi penempatan lanjutan untuk mengatur label dan menghindari tumpang tindih
+
+Rendering : Ini adalah opsi untuk label dan fitur untuk rendering label yang cepat dan jelas
+
+Sekarang, kita akan membahas beberapa contoh pelabelan layer menggunakan opsi pelabelan tingkat lanjut.
+
+#### Memberi label lapisan titik
+Dalam contoh ini, kami akan memberi label lapisan titik stasiun kereta bawah tanah dengan nama stasiun dan ID garis. Ini berarti bahwa dalam label, kita perlu menggabungkan informasi dari berbagai bidang, dan untuk melakukan ini, kita akan menggunakan "nama" || “/ N” || "Garis" ekspresi.
+
+Dari daftar drop-down Font , pilih misalnya OpenSans (atau font lain yang diinginkan) dan maksimalkan nilai Ukurannya menjadi 9 poin.
+
+Di bagian Pemformatan , kami hanya mengatur Alignment ke Center .
+
+Di bagian Buffer , aktifkan Draw text buffer . Atur ukuran Buffer ke 1 mm dan Pen join style ke Round .
+
+Jangan lupa memilih warna untuk buffering. Selain itu, jika Anda ingin mendapatkan efek yang lebih berstyle, mainkan dengan slider Transparansi dan mode Blend . Kami tidak akan menggunakan opsi latar belakang apa pun, jadi dalam contoh ini, bagian ini dihilangkan dan kami akan langsung ke Shadow.
+
+Aktifkan sakelar Draw drop shadow . Dari daftar drop-down Draw under, pilih Komponen label terendah.
+
+Jika Anda ingin melihat hasilnya tanpa meninggalkan jendela dialog, klik tombol Terapkan dari waktu ke waktu.
+Di bagian Offset , Anda dapat menentukan sudut drop shadow. Nilai dimasukkan secara manual atau disesuaikan dengan panah mouse di sakelar putar di sebelah.
+
+Perhatikan bahwa garis besar bayangan tergantung pada sudut rotasi label. Jika Anda ingin mengabaikannya, sakelar Gunakan bayangan global harus diaktifkan.
+
+Memaksimalkan nilai radius Blur melembutkan bayangan, dan Anda dapat mencapai efek yang lebih kompleks menggunakan mode Transparansi , Warna , dan Blend .
+
+Dengan meminimalkan atau memaksimalkan nilai Skala , bayangan dapat dibuat lebih halus atau jelas.
+
+Di bagian Penempatan , aktifkan Offset dari mode titik dan Anda akan melihat kuadran penempatan. Klik tombol kuadran tengah terendah untuk menempatkan label di tengah di bawah penanda simbol. Jika labelnya kompleks, seperti pada kasus kami, ada kemungkinan label akan tumpang tindih sebagian. Untuk menghindari tumpang tindih, gunakan Offset X, Y , yang merupakan nilai untuk perpindahan horisontal dan vertikal label. Masukkan nilai Y positif kecil (misalnya, 3.0) untuk memindahkan label sedikit lebih rendah.
+
+Akhirnya, di bagian Rendering , aktifkan visibilitas berbasis Skala dan masukkan 10000 di penyebut untuk skala maksimum yang dimungkinkan. Ini berarti bahwa label kami hanya akan terlihat dalam rentang skala 1: 1 hingga 1: 10000. Jika Anda ingin mencegah QGIS menyembunyikan label yang tumpang tindih, aktifkan Tampilkan semua label untuk lapisan ini (termasuk label yang bertabrakan). Beberapa label mungkin diputar untuk penempatan yang lebih baik, atau bahkan kanvas peta dapat diputar. Kemudian, Anda dapat memutuskan apakah akan mengizinkan rotasi label terbalik menggunakan Show label terbalik.
+
+Jika layer mengandung banyak fitur, dimungkinkan untuk menggunakan nomor untuk membatasi jumlah fitur yang akan dilabeli . Anda juga dapat menggunakan label Discourage dari fitur penutup . Hasilnya, peta Anda akan terlihat lebih rapi. Bergantung pada opsi pelabelan yang telah Anda pilih, lapisan berlabel Anda mungkin terlihat mirip dengan tangkapan layar berikut:
+
+```{r fig931, fig.cap='Memilih simbol',echo=FALSE, message=FALSE, warning=FALSE, out.width='30%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/09/fig93.jpeg")
+```
+
+Memberi label lapisan garis
+Proses pelabelan lapisan garis mirip dengan yang dijelaskan sebelumnya, tetapi di bagian Penempatan, Anda dapat menemukan beberapa opsi garis khusus. Opsi yang paling penting adalah sebagai berikut:
+
+Paralel : Label disesuaikan sepanjang arah yang sejajar dengan arah utama dari garis berlabel. Jenis penempatan ini baik untuk menyampaikan lekukan garis, tetapi dapat melewatkan detail kecil.
+
+Lengkung : Label akan melengkung sehingga mencerminkan kelengkungan garis asli. Ini adalah pilihan terbaik untuk memberi label objek dengan geometri yang kompleks, seperti sungai dan jalur.
+
+Horisontal : Terlepas dari orientasi garis, label selalu ditempatkan secara horizontal.
+
+Label dapat ditempatkan masing-masing di atas, di, atau di bawah garis. Dalam hal penempatan on-line, jalur akan tumpang tindih sebagian dengan label. Jika Anda memilih beberapa opsi sekaligus, QGIS akan menentukan posisi terbaik dan bahkan mempertimbangkan arah garis dengan posisi yang bergantung pada orientasi Garis diaktifkan.
+
+The pilihan Jarak mendefinisikan seberapa jauh dari garis label akan ditempatkan (itu hanya aktif untuk atas / On line posisi). Sudut maksimum antara karakter melengkung menentukan seberapa jauh Anda dapat menekuk label. Di bagian Rendering , opsi spesifik jalur utama berada di dalam Opsi fitur . Misalnya, di sini Anda dapat menggunakan Gabung yang terhubung baris untuk menghindari duplikat label , yang sangat berguna untuk bekerja dengan jaringan jalan. Dengan fitur penandaan label Suppress lebih kecil dari , Anda dapat mengatur nilai-nilai untuk fitur kecil diabaikan selama pelabelan.
+
+2.3.3.3 Memberi label lapisan poligon
+Di bagian ini, kami akan menambahkan label ke lapisan kode pos:
+
+Aktifkan pelabelan dan pilih bidang kode pos untuk menambahkan label.
+
+Di bagian teks, atur Font ke Harlow Solid Italic (atau font lain yang Anda suka) dan masukkan 10 di bawah Size. Labelnya sangat sederhana, jadi kami tidak akan menggunakan format apa pun, dan alih-alih menggunakan buffer, kami akan bekerja dengan Background .
+
+Aktifkan sakelar Draw background .
+
+Di daftar turun-bawah Bentuk , ada beberapa opsi yang tersedia untuk menentukan bentuk latar belakang. Anda dapat memilih dari geometri sederhana (persegi panjang, persegi, elips, dan sebagainya) atau bentuk yang lebih canggih dengan SVG. Pilih SVG, navigasikan ke folder dataset pelatihan / svg, dan pilih plate.svg. Atur tipenya ke Buffer dan sesuaikan Ukuran ke 1 mm. Selain itu, jika parameter SVG dapat dimodifikasi, Anda dapat memilih Fill , Border color , dan Lebar Border .
+
+Di bagian Penempatan , Anda akan melihat beberapa opsi khusus poligon, sebagai berikut:
+
+Offset dari centroid :
+Label akan ditempatkan di tengah poligon dalam kuadran yang dipilih dan dengan offset yang ditentukan, jika ada. Anda juga dapat menentukan dengan tepat centroid mana yang akan digunakan, terlihat atau keseluruhan. Jika Anda memilih centroid poligon yang terlihat, maka visibilitas dan penempatan label akan berubah secara dinamis saat memperbesar dan menggeser peta. Jika Anda memilih seluruh poligon centroid, labelnya akan statis. Selain itu, jika Anda mengaktifkan Force point di dalam poligon, label akan cenderung tetap di dalam poligon saja.
+
+Sekitar centroid :
+Label akan ditempatkan di tengah poligon dalam jarak yang ditentukan.
+
+Menggunakan Perimeter :
+Label akan ditempatkan di sepanjang garis batas (opsi penempatan Di Atas / Di / Di Bawah tersedia, dan dimungkinkan untuk menggabungkannya agar memungkinkan QGIS menentukan posisi terbaik). Aktifkan posisi yang tergantung orientasi garis jika Anda ingin mempertimbangkan arah jalur. Nilai Distance menentukan seberapa jauh dari garis label akan ditempatkan, dan nilai Ulangi bervariasi frekuensi pengulangan. Jenis pelabelan ini sangat berguna untuk batasan.
+
+Horisontal (lambat) :
+Semua label akan ditempatkan secara horizontal dan akan mengubah posisinya secara dinamis dengan zooming dan panning agar tetap berada di dalam poligon. Karena QGIS secara konstan mendefinisikan posisi optimal, jenis pelabelan ini dapat bekerja lebih lambat untuk kumpulan data besar.
+
+Gratis (lambat) :
+QGIS akan menentukan posisi optimal (termasuk rotasi) untuk label dalam tampilan peta saat ini.
+
+Coba sendiri berbagai opsi untuk pemahaman penempatan label yang lebih baik. Bagian Rendering sama dengan untuk layer garis, jadi Anda dapat menghindari memberi label beberapa fitur kecil atau membatasi jumlahnya.
+
+### Mengelola style
+
+Seperti yang dapat Anda lihat dari bagian sebelumnya, mengembangkan style adalah tugas yang menghabiskan waktu. Tetapi hal baiknya adalah bahwa sekali dikembangkan, style tidak hilang. Mereka dapat disimpan, diterapkan ke lapisan lain, dan diimpor dari dan diekspor ke sumber eksternal.
+
+Opsi manajemen style utama tersedia dari tombol __Style__fig1275 di baris bawah bagian Style di bawah Properties seperti yang ditunjukkan. Menu ini dibagi menjadi beberapa bagian yang dipisahkan oleh garis horizontal. Bagian pertama bertanggung jawab untuk memuat dan menyimpan style. Yang kedua dan ketiga adalah untuk mengelola beberapa style untuk lapisan, dan di bagian bawah adalah beralih untuk mengaktifkan style yang berbeda (tidak aktif dan berwarna abu-abu secara default, ketika hanya ada satu style yang tersedia).
+
+```{r fig941, fig.cap='Memilih simbol',echo=FALSE, message=FALSE, warning=FALSE, out.width='30%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/09/fig94.jpeg")
+```
+
+
+Setelah selesai memoles style Anda, sebaiknya simpan saja. Ada tiga pilihan utama untuk melakukan hal ini dari Style tombol dari Simpan Style menu:
+
+File Layer Style QGIS : Style disimpan sebagai file .qml, yang merupakan format QGIS asli untuk menyimpan style.
+
+File SLD : style diekspor ke file style descriptor layer (.sld). Jenis file ini mengubah simbologi asli menjadi simbol tunggal atau tipe berbasis aturan. Ini berarti dikategorikan, lulus, peta panas, dan jenis simbologi lainnya mungkin tidak didukung dengan benar. Simbologi berbasis penyaji mungkin tidak didukung dengan benar. Mungkin nyaman untuk menyimpan simbologi dalam file .sld jika Anda berencana untuk mengerjakannya dalam aplikasi eksternal, seperti GeoServer.
+
+Simpan dalam basis data : Kami menggunakan opsi ini untuk menyimpan dan mendistribusikan semua data dan style kami dalam satu basis data SpatiaLite. Saat memuat style, penting untuk memberikan nama yang bermakna dan deskripsi lengkap. Ini sangat berguna karena jika Anda ingin orang lain bekerja dengan data Anda dan style dengan benar, mereka hanya perlu terhubung ke database, memuat lapisan dan style spasial, dan menerapkannya.
+
+Setelah style disimpan, Anda dapat menggunakan Muat dari file (style | Muat style | Muat dari file) atau Muat dari database untuk memilih dan menerapkan style.
+
+Komunitas QGIS sangat aktif dalam mengembangkan sumber daya dan ingin membagikannya, jadi alih-alih menghabiskan waktu yang lama untuk mengembangkan style Anda sendiri, Anda dapat menerapkan style siap pakai yang disediakan oleh berbagai pengguna. Kami menyarankan Anda untuk melihat hal-hal berikut:
+
+Lembaran style QGIS bentuk OSM Charley Glynn tersedia di https://github.com/charleyglynn/OSM-Shapefile-QGIS-stylesheets
+
+3liz styles untuk data OpenStreetMap di QGIS di https://github.com/3liz/osm-in-qgis
+
+style Anita Graser untuk database SpatiaLite di https://github.com/anitagraser/QGIS-resources/tree/master/qgis2/osm_spatialite
+
+Ross Grayscale styles untuk shapefile OSM di QGIS di https://github.com/mixedbredie/OSM-Shapefile-QGIS-stylesheets/tree/master/QML%20files/greyscale
+
+Anda dapat mengunduh file .qml yang siap digunakan dari sana dan menerapkannya ke lapisan Anda, tetapi atribut lapisan Anda harus sama dengan atribut yang digunakan dalam style siap. Jika tidak, Anda bisa menggunakan style ini sebagai templat dasar dan menyesuaikan nama dan nilai bidang secara manual.
+Menggunakan beberapa style untuk lapisan yang sama
+
+Anda juga bisa mendapatkan akses cepat ke beberapa properti penataan style dari layer kontekstual Styles klik kanan, seperti yang ditunjukkan di sini:
+
+```{r fig951, fig.cap='Memilih simbol',echo=FALSE, message=FALSE, warning=FALSE, out.width='30%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/09/fig95.jpeg")
+```
+
+Misalnya, Anda dapat dengan mudah menyalin style dari satu lapisan dan menempelkannya ke yang lain. Selain itu, Anda dapat menerapkan beberapa style untuk satu lapisan dan beralih di antara mereka jika perlu. Untuk menambahkan satu style lagi ke layer, ikuti langkah-langkah ini:
+
+Klik pada jalan pintas kontekstual klik kanan Tambah lapisan, yang berada di bawah Styles.
+
+Di jendela style baru, ketik nama untuk style baru, dan klik OK, seperti yang ditunjukkan pada tangkapan layar berikut
+
+
+```{r fig961, fig.cap='Memilih simbol',echo=FALSE, message=FALSE, warning=FALSE, out.width='30%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/09/fig96.jpeg")
+```
+
+Penampilan layer tidak akan diubah, karena itu bergantung pada style yang diterapkan terakhir untuk saat ini. Buka dialog Properties layer dan sesuaikan style baru seperti ini:
+Anda dapat mengembangkan style baru di bagian style dengan cara yang umum, seperti yang dijelaskan sebelumnya di bagian Mengembangkan style Anda sendiri.
+
+Juga, Anda dapat mengunggah style siap pakai dengan membuka style | Muat style.
+
+Setelah penataan selesai, klik tombol OK . Anda akan melihat bahwa kedua style tersedia, baik dari menu tombol style atau jalan pintas kontekstual style klik kanan.
+
+Anda dapat mengembangkan style sebanyak yang Anda inginkan, dan gunakan sakelar di sebelah namanya untuk beralih di antara style. Anda juga dapat menggunakan pintasan Tambah , Hapus Saat Ini , dan Ubah Nama Saat Ini untuk mengelola beberapa style.
+
+
+### Menambahkan peta dasar
+
+Peta dasar adalah peta latar belakang siap pakai yang menyediakan informasi kontekstual dan spasial tambahan untuk data Anda. Mereka dapat berupa citra satelit, peta umum dari berbagai sumber, atau bahkan peta khusus yang disiapkan sendiri. Di bagian ini, kita akan melihat jenis-jenis peta latar belakang yang paling populer dan cara memuatnya ke QGIS untuk menggabungkannya dengan data Anda.
+
+Plugin OpenLayers
+
+Ini adalah salah satu plugin QGIS paling populer , karena memungkinkan penambahan sederhana peta dasar dari berbagai penyedia peta populer ( OpenStreetMap, Google Maps, Bing Maps, dan sebagainya ). Instal plugin seperti yang dijelaskan pada Bab 1, dan pastikan plugin itu aktif setelah instalasi.
+
+Memuat peta dasar itu sederhana; pergi ke Web | OpenLayers , pilih penyedia, dan klik pada peta yang ingin Anda tambahkan. Peta akan dimuat ke kanvas peta dan muncul di panel Layers . Secara default, layer ditambahkan ke grup layer pertama, tetapi Anda dapat menarik dan melepasnya di mana pun Anda inginkan. Lapisan dapat ditampilkan atau disembunyikan dengan beralih di samping namanya, dan dihapus dari proyek dengan Hapus pintasan kontekstual Klik kanan.
+
+Anda dapat memperoleh kontrol lebih luas atas lapisan dan navigasi dengan mengaktifkan panel OpenLayers Overview dari menu. Panel akan muncul di sudut kiri bawah di bawah panel Layers.
+
+Aktifkan sakelar Aktifkan peta dan pilih peta untuk ikhtisar dari daftar turun bawah. Anda dapat menggunakan dua peta berbeda di jendela ikhtisar dan jendela kanvas peta untuk perbandingan. Jika Anda ingin memuat peta ke kanvas, klik tombol Tambahkan peta di sebelah daftar drop-down. Untuk navigasi yang lebih sederhana, ada palang merah di jendela peta utama. Ini menandai pusat dari luas ikhtisar. Anda dapat menyembunyikannya dengan mengeklik sakelar yang sesuai. Juga, peta ikhtisar dapat disimpan sebagai gambar .jpeg, atau luas persegi panjang dapat disalin ke clipboard sebagai KML.
+
+The OpenLayers Plugin ini sangat berguna karena banyak peta dan kesederhanaan, tetapi ada sejumlah kendala Anda harus memperhatikan saat bekerja dengan itu. Pertama-tama, plugin ini ditujukan untuk menyediakan peta dasar saja, dan sebelum menggunakannya untuk melakukan tugas-tugas lain, sangat disarankan untuk mempelajari persyaratan lisensi penyedia. Kedua, perhatikan bahwa menambahkan lapisan apa pun dari daftar plugin secara otomatis mengubah proyeksi peta asli ke EPSG: 3857 WGS 84 / Pseudo Mercator .
+
+Ini karena plugin mengambil data yang semula disediakan dalam EPSG: 3857 , dan alih-alih memproyeksi ulang, itu menekan proyeksi peta dan secara otomatis memproyeksi ulang data pengguna. Last but not least adalah fakta bahwa dengan plugin OpenLayers, Anda tidak dapat mengandalkan skala dan pengukuran peta. Ini karena proyeksi EPSG: 3857 WGS 84 / Pseudo Mercator yang digunakannya dirancang bukan untuk meminimalkan distorsi objek (bentuk, area, jarak, dan sebagainya) tetapi agar sesuai dengan seluruh bola dunia sedemikian rupa sehingga dapat ditampilkan pada peta web. Semua pengukuran dalam proyeksi ini dilakukan pada bola, dan kemungkinan besar akan jauh lebih besar dari yang diharapkan. Dalam beberapa kata, proyeksi ini baik untuk eksplorasi visual tetapi tidak untuk pengukuran. Untuk mengatasi keterbatasan ini, Anda dapat menggunakan pendekatan lain.
+
+Menambahkan lapisan WMS / WMTS
+
+Layanan Web Map / Web Tile Service (WMS / WMTS) adalah protokol web populer untuk mentransfer informasi spasial. Untuk menambahkan lapisan dasar WMS / WMTS ke peta Anda lakukan langkah-langkah berikut:
+
+Untuk memuat data dari layanan web, pergi ke Layer | Tambahkan Layer | Tambahkan WMS / WMTS , gunakan tombol yang sesuai di toolbar Kelola lapisan, atau gunakan pintasan keyboard Ctrl + Shift + W.
+
+Di Tambahkan lapisan (s) dari jendela Server WM (T) S , klik tombol Baru untuk mengonfigurasi parameter koneksi baru.
+
+Di Buat Koneksi WMS baru , masukkan detail koneksi. Ketik Nama dan URL untuk parameter koneksi dan otentikasi, jika ada. Setelah mengisi rincian ini, klik OK . Koneksi yang baru dibuat akan muncul di daftar drop-down di bawah tab Layers.
+
+Klik tombol Connect untuk mendapatkan informasi tentang lapisan yang tersedia, pilih lapisan yang ingin Anda gunakan, klik Tambah , lalu klik Tutup untuk meninggalkan jendela.
+
+Dalam hal menggunakan lapisan WMS , data akan secara otomatis diproyeksikan ulang. Selain itu, Anda akan memiliki akses ke dialog Properties layer dan parameter styling, seperti transparansi, blending, dan mode warna yang tersedia untuk modifikasi. Tentu saja, lapisan ini tersedia untuk membuat peta pencetakan resolusi tinggi.
+
+Menambahkan lapisan TMS
+
+The Tile Map Service (TMS) adalah cara lain untuk memberikan data spasial melalui Internet dalam bentuk gambar rujukan geografis (ubin). Untuk memuat data TMS ke QGIS, instal dan aktifkan plugin TileMapScale . Setelah instalasi, plugin tersedia dari menu TileMapScale di bawah Plugins . Panel plugin terdiri dari dua tab. Pada tab pertama, Alat , Anda dapat melihat daftar tarik-turun dengan kumpulan data TMS yang tersedia. Dengan sakelar zoomlevel aktif, skala akan diatur secara otomatis agar sesuai dengan tingkat zoom ubin. Di bawah tab Opsi, Anda dapat mengaktifkan Use 'On-The-Fly'Transformasi jika Anda ingin lapisan ubin disesuaikan untuk memetakan proyeksi. Atur min / maks Zoomlevels dan klik tombol DPI untuk mengatur resolusi secara langsung.
+
+

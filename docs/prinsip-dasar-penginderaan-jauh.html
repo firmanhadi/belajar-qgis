@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Bab 4 Prinsip dasar penginderaan jauh | Belajar QGIS Mandiri</title>
+  <meta name="description" content="Belajar sendiri Sistem Informasi Geografis" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Bab 4 Prinsip dasar penginderaan jauh | Belajar QGIS Mandiri" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="/cover.png" />
+  <meta property="og:description" content="Belajar sendiri Sistem Informasi Geografis" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Bab 4 Prinsip dasar penginderaan jauh | Belajar QGIS Mandiri" />
+  
+  <meta name="twitter:description" content="Belajar sendiri Sistem Informasi Geografis" />
+  <meta name="twitter:image" content="/cover.png" />
+
+<meta name="author" content="Dr. Firman Hadi" />
+
+
+<meta name="date" content="2021-04-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="prev" href="akuisisi-data.html"/>
+<link rel="next" href="pengantar-sig.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Belajar Sendiri QGIS</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Pengantar</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Pendahuluan</a></li>
+<li class="chapter" data-level="2" data-path="persiapan.html"><a href="persiapan.html"><i class="fa fa-check"></i><b>2</b> Persiapan</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="persiapan.html"><a href="persiapan.html#perangkat-lunak"><i class="fa fa-check"></i><b>2.1</b> Perangkat lunak</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="persiapan.html"><a href="persiapan.html#instalasi"><i class="fa fa-check"></i><b>2.1.1</b> Instalasi</a></li>
+<li class="chapter" data-level="2.1.2" data-path="persiapan.html"><a href="persiapan.html#setting-qgis"><i class="fa fa-check"></i><b>2.1.2</b> Setting QGIS</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="persiapan.html"><a href="persiapan.html#data"><i class="fa fa-check"></i><b>2.2</b> Data</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="persiapan.html"><a href="persiapan.html#eros"><i class="fa fa-check"></i><b>2.2.1</b> EROS</a></li>
+<li class="chapter" data-level="2.2.2" data-path="persiapan.html"><a href="persiapan.html#earthdata"><i class="fa fa-check"></i><b>2.2.2</b> Earthdata</a></li>
+<li class="chapter" data-level="2.2.3" data-path="persiapan.html"><a href="persiapan.html#copernicus"><i class="fa fa-check"></i><b>2.2.3</b> Copernicus</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>I Analisis Tutupan Lahan</b></span></li>
+<li class="chapter" data-level="3" data-path="akuisisi-data.html"><a href="akuisisi-data.html"><i class="fa fa-check"></i><b>3</b> Akuisisi data</a></li>
+<li class="chapter" data-level="4" data-path="prinsip-dasar-penginderaan-jauh.html"><a href="prinsip-dasar-penginderaan-jauh.html"><i class="fa fa-check"></i><b>4</b> Prinsip dasar penginderaan jauh</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="prinsip-dasar-penginderaan-jauh.html"><a href="prinsip-dasar-penginderaan-jauh.html#spectral-signature"><i class="fa fa-check"></i><b>4.1</b> Spectral signature</a></li>
+<li class="chapter" data-level="4.2" data-path="prinsip-dasar-penginderaan-jauh.html"><a href="prinsip-dasar-penginderaan-jauh.html#semua-adalah-angka"><i class="fa fa-check"></i><b>4.2</b> Semua adalah angka</a></li>
+<li class="chapter" data-level="4.3" data-path="prinsip-dasar-penginderaan-jauh.html"><a href="prinsip-dasar-penginderaan-jauh.html#visualisasi-rgb"><i class="fa fa-check"></i><b>4.3</b> Visualisasi RGB</a></li>
+<li class="chapter" data-level="4.4" data-path="prinsip-dasar-penginderaan-jauh.html"><a href="prinsip-dasar-penginderaan-jauh.html#minimalisasi-kesalahan"><i class="fa fa-check"></i><b>4.4</b> Minimalisasi kesalahan</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="prinsip-dasar-penginderaan-jauh.html"><a href="prinsip-dasar-penginderaan-jauh.html#koreksi-radiometrik"><i class="fa fa-check"></i><b>4.4.1</b> Koreksi radiometrik</a></li>
+<li class="chapter" data-level="4.4.2" data-path="prinsip-dasar-penginderaan-jauh.html"><a href="prinsip-dasar-penginderaan-jauh.html#koreksi-geometrik"><i class="fa fa-check"></i><b>4.4.2</b> Koreksi geometrik</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="prinsip-dasar-penginderaan-jauh.html"><a href="prinsip-dasar-penginderaan-jauh.html#klasifikasi"><i class="fa fa-check"></i><b>4.5</b> Klasifikasi</a></li>
+</ul></li>
+<li class="part"><span><b>II Sistem Informasi Geografis</b></span></li>
+<li class="chapter" data-level="5" data-path="pengantar-sig.html"><a href="pengantar-sig.html"><i class="fa fa-check"></i><b>5</b> Pengantar SIG</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="pengantar-sig.html"><a href="pengantar-sig.html#definisi"><i class="fa fa-check"></i><b>5.1</b> Definisi</a></li>
+<li class="chapter" data-level="5.2" data-path="pengantar-sig.html"><a href="pengantar-sig.html#tipe-data"><i class="fa fa-check"></i><b>5.2</b> Tipe Data</a></li>
+<li class="chapter" data-level="5.3" data-path="pengantar-sig.html"><a href="pengantar-sig.html#sistem-koordinat-skala-dan-resolusi"><i class="fa fa-check"></i><b>5.3</b> Sistem koordinat, skala dan resolusi</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="visualisasi-data-di-qgis.html"><a href="visualisasi-data-di-qgis.html"><i class="fa fa-check"></i><b>6</b> Visualisasi Data di QGIS</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="visualisasi-data-di-qgis.html"><a href="visualisasi-data-di-qgis.html#grouping-dan-ordering"><i class="fa fa-check"></i><b>6.0.1</b> Grouping dan Ordering</a></li>
+<li class="chapter" data-level="6.0.2" data-path="visualisasi-data-di-qgis.html"><a href="visualisasi-data-di-qgis.html#styling"><i class="fa fa-check"></i><b>6.0.2</b> Styling</a></li>
+<li class="chapter" data-level="6.0.3" data-path="visualisasi-data-di-qgis.html"><a href="visualisasi-data-di-qgis.html#pelabelan"><i class="fa fa-check"></i><b>6.0.3</b> Pelabelan</a></li>
+<li class="chapter" data-level="6.0.4" data-path="visualisasi-data-di-qgis.html"><a href="visualisasi-data-di-qgis.html#mengelola-style"><i class="fa fa-check"></i><b>6.0.4</b> Mengelola style</a></li>
+<li class="chapter" data-level="6.0.5" data-path="visualisasi-data-di-qgis.html"><a href="visualisasi-data-di-qgis.html#menambahkan-peta-dasar"><i class="fa fa-check"></i><b>6.0.5</b> Menambahkan peta dasar</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="hari-keenam.html"><a href="hari-keenam.html"><i class="fa fa-check"></i><b>7</b> Analisis Sistem Informasi Geografis</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="hari-keenam.html"><a href="hari-keenam.html#basic-geoprocessing"><i class="fa fa-check"></i><b>7.1</b> Basic Geoprocessing</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="hari-keenam.html"><a href="hari-keenam.html#penapisan-data"><i class="fa fa-check"></i><b>7.1.1</b> Penapisan data</a></li>
+<li class="chapter" data-level="7.1.2" data-path="hari-keenam.html"><a href="hari-keenam.html#dissolve"><i class="fa fa-check"></i><b>7.1.2</b> Dissolve</a></li>
+<li class="chapter" data-level="7.1.3" data-path="hari-keenam.html"><a href="hari-keenam.html#polygon-dari-layer-extent"><i class="fa fa-check"></i><b>7.1.3</b> Polygon dari layer extent</a></li>
+<li class="chapter" data-level="7.1.4" data-path="hari-keenam.html"><a href="hari-keenam.html#reklasifikasi"><i class="fa fa-check"></i><b>7.1.4</b> Reklasifikasi</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="hari-keenam.html"><a href="hari-keenam.html#terrain-analyses"><i class="fa fa-check"></i><b>7.2</b> Terrain analyses</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="hari-keenam.html"><a href="hari-keenam.html#persiapan-1"><i class="fa fa-check"></i><b>7.2.1</b> Persiapan</a></li>
+<li class="chapter" data-level="7.2.2" data-path="hari-keenam.html"><a href="hari-keenam.html#kelerengan"><i class="fa fa-check"></i><b>7.2.2</b> Kelerengan</a></li>
+<li class="chapter" data-level="7.2.3" data-path="hari-keenam.html"><a href="hari-keenam.html#hillshade"><i class="fa fa-check"></i><b>7.2.3</b> Hillshade</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="hari-keenam.html"><a href="hari-keenam.html#density-analyses-analisis-kepadatan"><i class="fa fa-check"></i><b>7.3</b> Density Analyses (Analisis Kepadatan)</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="hari-keenam.html"><a href="hari-keenam.html#konsep"><i class="fa fa-check"></i><b>7.3.1</b> Konsep</a></li>
+<li class="chapter" data-level="7.3.2" data-path="hari-keenam.html"><a href="hari-keenam.html#membuat-heatmap-dengan-plugin-qgis"><i class="fa fa-check"></i><b>7.3.2</b> Membuat Heatmap dengan plugin QGIS</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="hari-keenam.html"><a href="hari-keenam.html#analisis-kesesuaian"><i class="fa fa-check"></i><b>7.4</b> Analisis kesesuaian</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="hari-keenam.html"><a href="hari-keenam.html#tahap-1-mendefinisikan-maksud-dan-tujuan"><i class="fa fa-check"></i><b>7.4.1</b> Tahap 1: Mendefinisikan maksud dan tujuan</a></li>
+<li class="chapter" data-level="7.4.2" data-path="hari-keenam.html"><a href="hari-keenam.html#tahap-2-analisis-ketersediaan-data-dan-definisikan-relevansi"><i class="fa fa-check"></i><b>7.4.2</b> Tahap 2 : Analisis ketersediaan data dan definisikan relevansi</a></li>
+<li class="chapter" data-level="7.4.3" data-path="hari-keenam.html"><a href="hari-keenam.html#tahap-3-definisikan-kriteria-analisis"><i class="fa fa-check"></i><b>7.4.3</b> Tahap 3 : Definisikan kriteria analisis</a></li>
+<li class="chapter" data-level="7.4.4" data-path="hari-keenam.html"><a href="hari-keenam.html#tahap-4-analisis-dan-persiapan-data"><i class="fa fa-check"></i><b>7.4.4</b> Tahap 4 : Analisis dan persiapan data</a></li>
+<li class="chapter" data-level="7.4.5" data-path="hari-keenam.html"><a href="hari-keenam.html#tahap-5-overlay-data-dan-interpretasi-hasil"><i class="fa fa-check"></i><b>7.4.5</b> Tahap 5 : Overlay data dan interpretasi hasil</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html"><i class="fa fa-check"></i><b>8</b> Pencetakan Peta</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#composer-peta"><i class="fa fa-check"></i><b>8.1</b> Composer Peta</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#halaman-pengaturan-awal"><i class="fa fa-check"></i><b>8.1.1</b> Halaman pengaturan awal</a></li>
+<li class="chapter" data-level="8.1.2" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#menambahkan-dan-mengkustomisasi-peta"><i class="fa fa-check"></i><b>8.1.2</b> Menambahkan dan mengkustomisasi peta</a></li>
+<li class="chapter" data-level="8.1.3" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#menambahkan-dan-menyesuaikan-legenda"><i class="fa fa-check"></i><b>8.1.3</b> Menambahkan dan menyesuaikan legenda</a></li>
+<li class="chapter" data-level="8.1.4" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#mengelola-komposer-cetak"><i class="fa fa-check"></i><b>8.1.4</b> Mengelola komposer cetak</a></li>
+<li class="chapter" data-level="8.1.5" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#video"><i class="fa fa-check"></i><b>8.1.5</b> Video</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#kartografi-di-r"><i class="fa fa-check"></i><b>8.2</b> Kartografi di R</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#fitur"><i class="fa fa-check"></i><b>8.2.1</b> Fitur</a></li>
+<li class="chapter" data-level="8.2.2" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#contoh"><i class="fa fa-check"></i><b>8.2.2</b> Contoh</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/firmanhadi/belajar-qgis" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Belajar QGIS Mandiri</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="prinsip-dasar-penginderaan-jauh" class="section level1" number="4">
+<h1><span class="header-section-number">Bab 4</span> Prinsip dasar penginderaan jauh</h1>
+<p>OK, di bagian ini saya akan mengkombinasikan antara praktek dan teori. Seperti pesan yang masih saya ingat betul dari Prof. Hasan Z. Abidin, <em>“There is nothing as practical as a good theory”</em>. Catatan: pesan ini aslinya dipopulerkan oleh Lewin (1943, 1944, 1945), namun menurut saya masih berlaku hingga saat ini.</p>
+<p>Kembali ke data yang telah diunduh menggunakan SCP Plugin di QGIS. Proses yang dijalankan dengan SCP Plugin membuat dua untuk menyimpan data Landsat, (1) LT05_L1TP_122065_19900709_20170129_01_T1_1990-07-09, (2) LT05_L1TP_122065_19900709_20170129_01_T1_1990-07-09_converted.</p>
+<div class="figure" style="text-align: center"><span id="fig:figc4001"></span>
+<img src="img/c4_001.png" alt="Struktur folder" width="50%" />
+<p class="caption">
+Gambar 4.1: Struktur folder
+</p>
+</div>
+<p>Folder pertama menyimpan data yang direkam oleh citra ( <em>raw data</em> ),sedangkan folder kedua berisi berkas (file) yang sudah dilakukan prapengolahan (<em>Masih ingat kan tadi kita memilih <strong>Pre-process images</strong> ?</em>)</p>
+<p>Kedua folder memiliki 8 berkas TIF dan 1 berkas teks (untuk folder pertama). Kedelapan berkas TIF terdiri dari hasil perekaman dari tujuh (7) <em>band</em> dan satu (1) file Quality Assurance (QA). Satu berkas teks (_MTL.txt) adalah berkas metadata.</p>
+<div class="figure" style="text-align: center"><span id="fig:figc4002"></span>
+<img src="img/c4_002.png" alt="Raw data citra Landsat 5" width="70%" />
+<p class="caption">
+Gambar 4.2: Raw data citra Landsat 5
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:figc4003"></span>
+<img src="img/c4_003.png" alt="File citra Landsat 5 yang sudah dilakukan pre-processing" width="70%" />
+<p class="caption">
+Gambar 4.3: File citra Landsat 5 yang sudah dilakukan pre-processing
+</p>
+</div>
+<p>Penamaan berkas untuk setiap <em>band</em> mengikuti pola tertentu. Sebagai contoh, band 1 memiliki nama berkas LT05_L1TP_122065_19900709_20170129_01_T1_1990-07-09_B1.TIF, yang dapat dijelaskan sebagai berikut :</p>
+<pre><code>- LT05 : Menunjukkan berkas tersebut adalah berkas data Landsat 5
+
+- L1TP : Level pengolahan, Tier 1 Level 1 Precision and Terrain.  
+Tier 1 memiliki kualitas data yang paling tinggi dan cocok digunakan untuk analisis 
+time series. Data telah dikalibrasi untuk ragam instrumen 
+Landsat dan memiliki tolerasi kesalahan geometrik (RMSE) &lt;= 12 meter.
+
+- 122065 : Nomor Path : 122 dan nomor Row : 065
+
+- 1990709 : Tanggal perekaman
+
+- 20170129 : Tanggal ingestion
+
+- 1990-07-09 : Tanggal perekaman
+
+- B1 : Band 1</code></pre>
+<p><strong>Path-Row</strong> merupakan istilah yang digunakan oleh satelit Landsat untuk akuisisi citra berbasis Worldwide Reference System (WRS). <strong>Path</strong> mengacu pada salah satu dari 251 trek timur-barat yang dibuat oleh satelit saat mengikuti orbitnya, yang berada 440 hingga 570 mil ke arah Utara dan cenderung ke garis khatulistiwa. <strong>Row</strong> mengacu pada <em>side-to-side scan</em> di sepanjang jalur orbit, dengan nomor <strong>Row</strong> mengacu pada garis tengah garis lintang setiap frame. Ada 119 row, dari 80 derajat Lintang Selatan ke 80 derajat Lintang Utara. <strong>Scene</strong> adalah serangkaian row lengkap, yang mencakup 24 detik waktu perjalanan satelit, sehingga dalam orbit lengkap, 248 <strong>scene</strong> diperoleh selama 6196 detik (1,72 jam) untuk Landsat 1. Gambar berikut merupakan contoh cakupan Scene Landsat 8 di Indonesia. Bagian yang diberi tanda kotak merah adalah Path-Row 122-065.</p>
+<div class="figure" style="text-align: center"><span id="fig:figc4004"></span>
+<img src="img/landsat_pathrow.png" alt="Path-row Landsat di Indonesia" width="70%" />
+<p class="caption">
+Gambar 4.4: Path-row Landsat di Indonesia
+</p>
+</div>
+<p>Berkas _MTL.txt berisi metadata dari scene Landsat yang diunduh. Isi dari metadata Landsat termasuk waktu perekaman, posisi satelit, konstanta dan lainnya yang diperlukan untuk melakukan koreksi radiometrik. Apabila kita melakukan koreksi radiometrik secara manual, maka kita harus membaca metadata dan menggunakan informasi di dalamnya. Untuk tahapan yang kita lakukan, berkas metadata digunakan oleh SCP Plugin untuk proses koreksi radiometrik.</p>
+<p>Adapun untuk folder converted, pola nama berkasnya hampir sama dengan di atas, perbedaannya terletak pada awalan (RT), yang menunjukkan bahwa data sudah dalam format <em>reflectance</em>. Apa itu <em>reflectance</em>? <em>Sabar kawan, nanti kita akan belajar tentang itu</em>.</p>
+<p>Supaya otak kita tidak terlalu panas, saya cukupkan dahulu penjelasan mengenai struktur data Landsat. Sekarang kita akan melihat dan bermain-main dengan data citra Landsat yang telah kita unduh.</p>
+<p><em>“Are you ready? Let’s get it on!”</em></p>
+<div id="spectral-signature" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Spectral signature</h2>
+<p><strong><em>Spectral signature</em></strong> adalah prinsip #1 dalam memahami konsep inderaja. <strong>Spektral signature</strong> menampilkan semua variasi reflektansi radiasi spektrum gelombang sebagai fungsi dari panjang gelombang. Gambar di bawah memperlihatkan <strong>spectral signature</strong> untuk vegetasi.</p>
+<div class="figure" style="text-align: center"><span id="fig:figc4005"></span>
+<img src="img/spectral-signatures.png" alt="Pola spektral air dan vegetasi" width="70%" />
+<p class="caption">
+Gambar 4.5: Pola spektral air dan vegetasi
+</p>
+</div>
+<p>Istilah <strong>spectral signature</strong> memberikan makna bahwa obyek-obyek di permukaan bumi memiliki karakteristik tersendiri dalam memantulkan gelombang elektromagnetik. Seperti terlihat pada gambar berikut air, rumput kering, vegetasi dan salju memiliki karakteristik yang berbeda.</p>
+<div class="figure" style="text-align: center"><span id="fig:figc4006"></span>
+<img src="img/spectral-signatures-2.png" alt="Pola spektral air, rumput kering, vegetasi dan salju" width="70%" />
+<p class="caption">
+Gambar 4.6: Pola spektral air, rumput kering, vegetasi dan salju
+</p>
+</div>
+<p>Dengan data yang sudah diunduh dan bermodalkan QGIS, kita akan belajar lebih lanjut tentang prinsip ini.</p>
+<p>Gunakan panel <strong>Browser</strong> di QGIS, buka folder data. Sebagai contoh, folder data saya ada di /home/firmanhadi/00_qgis.</p>
+<div class="figure" style="text-align: center"><span id="fig:qgis001"></span>
+<img src="img/0qgis_001.png" alt="Browser Panel" width="70%" />
+<p class="caption">
+Gambar 4.7: Browser Panel
+</p>
+</div>
+<p>Di <strong>Panel Layers</strong>, klik <strong>Add Group</strong> untuk membuat grup layer yang baru, ubah namanya menjadi <em>rawdata</em> dengan klik kanan dan pilih <strong>Rename Group</strong>.</p>
+<div class="figure" style="text-align: center"><span id="fig:qgis002"></span>
+<img src="img/0qgis_002.png" alt="Add group" width="50%" />
+<p class="caption">
+Gambar 4.8: Add group
+</p>
+</div>
+<p>Pastikan grup <em>rawdata</em> tersorot dan pilih tujuh (7) band rawa data yang ada di dalam folder LT05_L1TP_122065_19900709_20170129_01_T1_1990-07-09. Setelah terpilih, klik kanan dan pilih <strong>Add selected layers to project</strong>.</p>
+<div class="figure" style="text-align: center"><span id="fig:qgis003"></span>
+<img src="img/0qgis_003.png" alt="Menampilkan file di Main Display" width="50%" />
+<p class="caption">
+Gambar 4.9: Menampilkan file di Main Display
+</p>
+</div>
+<p>Band 7 secara otomatis akan terpilih di <strong>Panel Layers</strong> dan ditampilkan di <strong>Map Display</strong></p>
+<p>Tahapan yang seringkali dilupakan setelah membuka data citra adalah memahami informasi terkait data (metadata). Di QGIS, untuk mengetahui metadata citra, kita dapat klik dua kali nama band di <strong>Panel Layers</strong>. Kita dapat membaca metadata seperti Name, Path, CRS, Extent dan lainnya di tab <strong>Information</strong>. Berhubung sub bagian ini adalah tentang <strong>Spectral Signature</strong>, penjelasan tentang isi dari metadata akan ditulis di sub bagian yang lain.</p>
+<div class="figure" style="text-align: center"><span id="fig:qgis004"></span>
+<img src="img/0qgis_004.png" alt="Menampilkan metadata" width="50%" />
+<p class="caption">
+Gambar 4.10: Menampilkan metadata
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:qgis005"></span>
+<img src="img/0qgis_005.png" alt="Metadata file citra" width="50%" />
+<p class="caption">
+Gambar 4.11: Metadata file citra
+</p>
+</div>
+<p>Selanjutnya, tambahkan Layer OpenStreetMap dengan memilih menu <strong>Web -&gt; OpenLayers Plugin -&gt; OpenStreetMap -&gt; OpenStreetMap</strong>. Fokuskan di wilayah Kota Bandung seperti terlihat pada gambar.</p>
+<div class="figure" style="text-align: center"><span id="fig:qgis006"></span>
+<img src="img/0qgis_006.png" alt="OpenStreetMap sebagai basemap" width="50%" />
+<p class="caption">
+Gambar 4.12: OpenStreetMap sebagai basemap
+</p>
+</div>
+<p>Selanjutnya sembunyikan layer OpenStreetMap sehingga yang ditampilkan di Map Display adalah Band 7.</p>
+<div class="figure" style="text-align: center"><span id="fig:qgis007"></span>
+<img src="img/0qgis_007.png" alt="Menon-aktifkan basemap" width="50%" />
+<p class="caption">
+Gambar 4.13: Menon-aktifkan basemap
+</p>
+</div>
+<p>Nama <em>band</em> di <strong>Panel Layers</strong> bagi saya terlalu panjang, makan tempat, <em>ya tidak</em>? Untuk mengemat ruang tampilan, kita dapat mengubah namanya menjadi lebih singkat seperti Band 7 atau B7. Caranya? Klik kanan pada nama band dan pilih <strong>Rename Layer</strong>. Setelah proses pengubahan nama, kita akan mendapatkan tampilan dengan porsi <strong>Map Display</strong> yang lebih luas.</p>
+<div class="figure" style="text-align: center"><span id="fig:qgis008"></span>
+<img src="img/0qgis_008.png" alt="Menampilkan Band 7" width="50%" />
+<p class="caption">
+Gambar 4.14: Menampilkan Band 7
+</p>
+</div>
+<p>Apa yang dapat Anda lihat dari Band 7? Gelap? Bandingkan dengan gambar selanjutnya, terlihat lebih jelas bukan?</p>
+<div class="figure" style="text-align: center"><span id="fig:qgis012"></span>
+<img src="img/0qgis_012.png" alt="Menampilkan Band 7 dengan tampilan lebih jelas" width="50%" />
+<p class="caption">
+Gambar 4.15: Menampilkan Band 7 dengan tampilan lebih jelas
+</p>
+</div>
+<p>Untuk membuat visualisasi citra lebih jelas, yang perlu dilakukan adalah mengaktifkan <strong>Raster Toolbar</strong>, klik menu <strong>View -&gt; Toolbars -&gt; Raster Toolbar</strong>.</p>
+<div class="figure" style="text-align: center"><span id="fig:qgis013"></span>
+<img src="img/0qgis_013.png" alt="Mengaktiffkan Raster Toolbal" width="50%" />
+<p class="caption">
+Gambar 4.16: Mengaktiffkan Raster Toolbal
+</p>
+</div>
+<p>Untuk membuat citra menjadi lebih jelas, klik ikon seperti pada gambar. Ikon ini akan melakukan perentangan nilai sehingga citra menjadi lebih kontras.</p>
+<div class="figure" style="text-align: center"><span id="fig:qgis014"></span>
+<img src="img/0qgis_014.png" alt="Merentangkan nilai Band 7 sesuai display" width="50%" />
+<p class="caption">
+Gambar 4.17: Merentangkan nilai Band 7 sesuai display
+</p>
+</div>
+<p>Mengapa citra satelit yang diunduh nampak gelap? Untuk menjawab pertanyaan ini, kita dapat melihat histogram Band 7. Klik dua kali pada nama <em>band</em>, pilih <strong>Histogram</strong>.</p>
+<div class="figure" style="text-align: center"><span id="fig:qgis015"></span>
+<img src="img/0qgis_015.png" alt="Menampilkan histogram" width="50%" />
+<p class="caption">
+Gambar 4.18: Menampilkan histogram
+</p>
+</div>
+<p>Histogram memperlihatkan nilai digital dari Band 7 lebih banyak berada di sebelah kiri histogram, di bawah nilai 50. Apa dampaknya? Citra akan terlihat gelap. Sebaliknya, apabila data lebih banyak berada di sebelah kanan histogram, maka citra akan terlihat terang. Citra dengan visualisasi yang kontras dan jelas itu akan dapat dicapai apabila datanya terdistribusi normal. Cara yang telah kita praktekkan itu pada dasarnya meregangkan nilai sehingga data terdistribusi normal, secara visual.</p>
+<p>Setiap band Landsat disimpan dalam berkas terpisah dalam format TIFFF. Untuk melihat profil reflektansi dari data yang kita miliki, <em>band</em> yang ada harus digabungkan menjadi satu berkas dengan fungsi <strong>Merge</strong> di QGIS.</p>
+<p>Cara melakukan penggabungan <em>band</em> di QGIS adalah sebagai berikut :</p>
+<ol style="list-style-type: decimal">
+<li>Klik <strong>Raster -&gt; Miscellaneous -&gt; Merge</strong>.</li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:qgis016"></span>
+<img src="img/0qgis_016.png" alt="Menggabungkan file (merge)" width="60%" />
+<p class="caption">
+Gambar 4.19: Menggabungkan file (merge)
+</p>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li>Klik tiga titik di bagian kanan <strong>Input Layers</strong>. Pilih B1, B2, B3, B4, B5 dan B7. Pastikan urutan band mulai dari B1 hingga ke B7, bukan sebaliknya.</li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:qgis017"></span>
+<img src="img/0qgis_017.png" alt="Mengurutkan band yang akan digabungkan" width="50%" />
+<p class="caption">
+Gambar 4.20: Mengurutkan band yang akan digabungkan
+</p>
+</div>
+<p>Tips untuk mendapatkan posisi seperti ini adalah dengan menampilkan setiap layer di Map Display dengan B1 di urutan bagian bawah, dan B7 di bagian paling atas.</p>
+<div class="figure" style="text-align: center"><span id="fig:qgis019"></span>
+<img src="img/0qgis_019.png" alt="Mengurutkan band di Layers Panel" width="50%" />
+<p class="caption">
+Gambar 4.21: Mengurutkan band di Layers Panel
+</p>
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Centang bagian <strong>Place each input file into a separate band</strong></p></li>
+<li><p>Pilih Byte untuk <strong>Output data type</strong></p></li>
+<li><p>Pilih berkas untuk menyimpan hasil.</p></li>
+<li><p>Pastikan pilihan yang ada sudah diisi sebelum mengklik <strong>Run</strong>.</p></li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:qgis018"></span>
+<img src="img/0qgis_018.png" alt="Proses merging" width="50%" />
+<p class="caption">
+Gambar 4.22: Proses merging
+</p>
+</div>
+<ol start="7" style="list-style-type: decimal">
+<li>Apabila tidak ada pesan kesalahan, berarti file gabungan telah berhasil dibuat.</li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:qgis020"></span>
+<img src="img/0qgis_020.png" alt="Proses merging telah selesai" width="70%" />
+<p class="caption">
+Gambar 4.23: Proses merging telah selesai
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:qgis021"></span>
+<img src="img/0qgis_021.png" alt="Citra hasil merging" width="70%" />
+<p class="caption">
+Gambar 4.24: Citra hasil merging
+</p>
+</div>
+<p>Proses <em>merging</em> sudah selesai. Citranya kali ini terdiri dari banyak <em>band</em>. Tapi kok masih terlihat gelap? Apakah kita dapat melakukan cara yang sama untuk memperjelas citra seperti sebelumnya?</p>
+<p>Jawabannya adalah bisa, tapi hasilnya tidak memperlihatkan warna yang sebenarnya.</p>
+<div class="figure" style="text-align: center"><span id="fig:qgis022"></span>
+<img src="img/0qgis_022.png" alt="Visualisasi citra hasil merging" width="70%" />
+<p class="caption">
+Gambar 4.25: Visualisasi citra hasil merging
+</p>
+</div>
+<p>Hal ini terjadi karena kita belum mengatur susunan band dalam format RGB, seperti berikut :</p>
+<ol style="list-style-type: decimal">
+<li><p>Klik dua kali file hasil merge.</p></li>
+<li><p>Klik Symbology</p></li>
+<li><p>Pilih Band 3 untuk <strong>Red band</strong>, Band 2 untuk <strong>Green band</strong>, Band 1 untuk <strong>Blue band</strong>.</p></li>
+<li><p>Pilih <strong>Stretch to MinMax</strong> untuk <strong>Contrast Enhancement</strong>.</p></li>
+<li><p>Klik <strong>OK</strong>.</p></li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:qgis023"></span>
+<img src="img/0qgis_023.png" alt="Simbologi citra" width="70%" />
+<p class="caption">
+Gambar 4.26: Simbologi citra
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:qgis024"></span>
+<img src="img/0qgis_024.png" alt="Visualisasi citra RGB True Color" width="70%" />
+<p class="caption">
+Gambar 4.27: Visualisasi citra RGB True Color
+</p>
+</div>
+<p>Selanjutnya, aktifkan plugin <strong>Temporal/Spectral Profile Tool</strong> dengan memilih menu <strong>Spectral
+Plugins -&gt; Profile Tool -&gt; Temporal/Spectral Profile</strong> . Untuk mengetahui profil spektral obyek, klik pada obyek yang diinginkan pada Map Display. Sebagai contoh, tiga gambar berikut memperlihatkan perbedaan <em>spectral signature</em> untuk obyek air, vegetasi dan urban (built up).</p>
+<div class="figure" style="text-align: center"><span id="fig:qgis026"></span>
+<img src="img/0qgis_026.png" alt="Pola spektral air" width="70%" />
+<p class="caption">
+Gambar 4.28: Pola spektral air
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:qgis027"></span>
+<img src="img/0qgis_027.png" alt="Pola spektral vegetasi" width="70%" />
+<p class="caption">
+Gambar 4.29: Pola spektral vegetasi
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:qgis028"></span>
+<img src="img/0qgis_028.png" alt="Pola spektral urban" width="70%" />
+<p class="caption">
+Gambar 4.30: Pola spektral urban
+</p>
+</div>
+<p>Gambar berikut memperlihatkan perbandingan karakteristik <em>spectral signature</em> air, vegetasi dan urban dari tiga titik sampel sebelumnya. Pola <em>spectral signature</em> untuk air memperlihatkan bahwa semakin panjang panjang gelombang. Hmmm, bahasanya rancu ya? Dalam bahasa Inggris, <em>the longer the wavelength, the lower the reflectance value</em>. Untuk vegetasi, terlihat ada lonjakan dari Band 3 ke Band 4, sedangkan untuk urban, tidak ada lonjakan nilai reflektansi untuk kedua obyek ini.
+Dari perbedaan pola grafik ketiga obyek, kita dapat menyimpulkan bahwa air, vegetasi dan urban memiliki <em>spectral signature</em> yang berbeda. Artinya, secara teoritis, data yang ada dapat digunakan untuk membuat peta dengan kelas tataguna lahan air, vegetasi dan urban. Lebih jelasnya akan dibahas pada sub bagian klasifikasi.</p>
+<div class="figure" style="text-align: center"><span id="fig:qgis039"></span>
+<img src="img/0qgis_039.png" alt="Pola spektral air, vegetasi dan urban" width="70%" />
+<p class="caption">
+Gambar 4.31: Pola spektral air, vegetasi dan urban
+</p>
+</div>
+</div>
+<div id="semua-adalah-angka" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Semua adalah angka</h2>
+<p>Prinsip #2 inderaja yang perlu dipahami adalah <strong>semua adalah angka</strong>. Reflektansi adalah satuan yang digunakan untuk menampilkan rasio jumlah spektrum elektro magnetik (EM) yang dipantulkan oleh obyek terhadap jumlah spektrum EM yang mengenainya. Peristiwa pemantulan gelombang yang merupakan sebuah peristiwa fisika (analog). Mata kita dapat mengindera pantulan cahaya dari obyek dan otak menginterpretasikannya sesuai intensitas.</p>
+<p>Sistem inderaja merekam intensitas pantulan cahaya dengan melakukan transformasi intensitas pantulan setiap spektrum EM ke dalam bentuk angka. Apa yang kita lihat warna putih, abu-abu atau hitam dalam citra satelit, pada dasarnya adalah angka.</p>
+<p>Sebagai contoh, gambar berikut memperlihatkan angka 0 direpresentasikan dengan warna hitam, angka 255 dalam warna putih dan warna lain dengan tingkat keabuan yang berbeda, ditampilkan dengan angka antara 0 hingga 255.</p>
+<div class="figure" style="text-align: center"><span id="fig:qgis041a"></span>
+<img src="img/0qgis_041a.png" alt="Visualisasi angka digital dalam citra" width="70%" />
+<p class="caption">
+Gambar 4.32: Visualisasi angka digital dalam citra
+</p>
+</div>
+<p>Angka 0 hingga 255 adalah angka yang disimpan dalam komputer dengan tipe data 8 bit. Tipe data ini mampu menyimpan <span class="math inline">\(2^8 = 256\)</span> nilai. Nilai minimum dan maksimum dari tipe data 8 bit, mungkin antara -128 hingga 127 apabila tipenya <em>signed integer</em>, atau antara 0 hingga 255 apabila tipenya <em>unsigned integer</em>.</p>
+<p>Jadi, angka digital dalam inderaja merepresentasikan nilai reflektansi. Dalam tipe data 8 bit, nilai reflektansi 0 disimpan dalam 0, ditampilkan dalam warna hitam. Nilai reflektansi 100 disimpan dalam angka 255, ditampilkan dalam warna hitam.</p>
+<div class="figure" style="text-align: center"><span id="fig:fig041"></span>
+<img src="img/0qgis_041.png" alt="Angka Digital" width="70%" />
+<p class="caption">
+Gambar 4.33: Angka Digital
+</p>
+</div>
+<p>Gambar di atas memperlihatkan nilai digital obyek air untuk B1, B2, B3, B4, B5 dan B6, dengan catatan B6 adalah Band 7 dari Landsat 5 TM. B1-B5 dan B7 dari Landsat 5 TM disebut dengan <em>multi-spectral channel</em>.</p>
+<p>Penyimpanan informasi reflektansi dalam bentuk nilai digital, memungkinkan mata kita untuk ‘membaca’ perilaku obyek dalam memantulkan spektrum EM di luar spektrum tampak.</p>
+<!-- dilakukannya analisis kuantitatif seperti _ratioing_, _change detection_, klasifikasi dan lainnya. -->
+</div>
+<div id="visualisasi-rgb" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Visualisasi RGB</h2>
+<!-- Sampai di sini, kita belum membahas tentang mengapa citra satelit -->
+<!-- Citra satelit memanfaatkan ragam spektrum EM yang memungkinkan kita untuk mendeteksi dan melakukan klasifikasi obyek-obyek itu berdasarkan Prinsip #1 (_spectral signature_). Ragam spektrum yang digunakan berada dalam rentang spektrum dengan panjang gelombang antara .. - ... . -->
+<!-- Spektrum EM gelombang tampak (visible), spektrum yang dapat diindera oleh mata manusia berada di rentang .. Pemanfaatan spektrum EM non-tampak (non-visible  -->
+</div>
+<div id="minimalisasi-kesalahan" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Minimalisasi kesalahan</h2>
+<div id="koreksi-radiometrik" class="section level3" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Koreksi radiometrik</h3>
+</div>
+<div id="koreksi-geometrik" class="section level3" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Koreksi geometrik</h3>
+</div>
+</div>
+<div id="klasifikasi" class="section level2" number="4.5">
+<h2><span class="header-section-number">4.5</span> Klasifikasi</h2>
+
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="akuisisi-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="pengantar-sig.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["SIG.pdf", "SIG.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

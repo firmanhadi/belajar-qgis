@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Bab 3 Akuisisi data | Belajar QGIS Mandiri</title>
+  <meta name="description" content="Belajar sendiri Sistem Informasi Geografis" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Bab 3 Akuisisi data | Belajar QGIS Mandiri" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="/cover.png" />
+  <meta property="og:description" content="Belajar sendiri Sistem Informasi Geografis" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Bab 3 Akuisisi data | Belajar QGIS Mandiri" />
+  
+  <meta name="twitter:description" content="Belajar sendiri Sistem Informasi Geografis" />
+  <meta name="twitter:image" content="/cover.png" />
+
+<meta name="author" content="Dr. Firman Hadi" />
+
+
+<meta name="date" content="2021-04-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="prev" href="persiapan.html"/>
+<link rel="next" href="prinsip-dasar-penginderaan-jauh.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Belajar Sendiri QGIS</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Pengantar</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Pendahuluan</a></li>
+<li class="chapter" data-level="2" data-path="persiapan.html"><a href="persiapan.html"><i class="fa fa-check"></i><b>2</b> Persiapan</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="persiapan.html"><a href="persiapan.html#perangkat-lunak"><i class="fa fa-check"></i><b>2.1</b> Perangkat lunak</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="persiapan.html"><a href="persiapan.html#instalasi"><i class="fa fa-check"></i><b>2.1.1</b> Instalasi</a></li>
+<li class="chapter" data-level="2.1.2" data-path="persiapan.html"><a href="persiapan.html#setting-qgis"><i class="fa fa-check"></i><b>2.1.2</b> Setting QGIS</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="persiapan.html"><a href="persiapan.html#data"><i class="fa fa-check"></i><b>2.2</b> Data</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="persiapan.html"><a href="persiapan.html#eros"><i class="fa fa-check"></i><b>2.2.1</b> EROS</a></li>
+<li class="chapter" data-level="2.2.2" data-path="persiapan.html"><a href="persiapan.html#earthdata"><i class="fa fa-check"></i><b>2.2.2</b> Earthdata</a></li>
+<li class="chapter" data-level="2.2.3" data-path="persiapan.html"><a href="persiapan.html#copernicus"><i class="fa fa-check"></i><b>2.2.3</b> Copernicus</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>I Analisis Tutupan Lahan</b></span></li>
+<li class="chapter" data-level="3" data-path="akuisisi-data.html"><a href="akuisisi-data.html"><i class="fa fa-check"></i><b>3</b> Akuisisi data</a></li>
+<li class="chapter" data-level="4" data-path="prinsip-dasar-penginderaan-jauh.html"><a href="prinsip-dasar-penginderaan-jauh.html"><i class="fa fa-check"></i><b>4</b> Prinsip dasar penginderaan jauh</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="prinsip-dasar-penginderaan-jauh.html"><a href="prinsip-dasar-penginderaan-jauh.html#spectral-signature"><i class="fa fa-check"></i><b>4.1</b> Spectral signature</a></li>
+<li class="chapter" data-level="4.2" data-path="prinsip-dasar-penginderaan-jauh.html"><a href="prinsip-dasar-penginderaan-jauh.html#semua-adalah-angka"><i class="fa fa-check"></i><b>4.2</b> Semua adalah angka</a></li>
+<li class="chapter" data-level="4.3" data-path="prinsip-dasar-penginderaan-jauh.html"><a href="prinsip-dasar-penginderaan-jauh.html#visualisasi-rgb"><i class="fa fa-check"></i><b>4.3</b> Visualisasi RGB</a></li>
+<li class="chapter" data-level="4.4" data-path="prinsip-dasar-penginderaan-jauh.html"><a href="prinsip-dasar-penginderaan-jauh.html#minimalisasi-kesalahan"><i class="fa fa-check"></i><b>4.4</b> Minimalisasi kesalahan</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="prinsip-dasar-penginderaan-jauh.html"><a href="prinsip-dasar-penginderaan-jauh.html#koreksi-radiometrik"><i class="fa fa-check"></i><b>4.4.1</b> Koreksi radiometrik</a></li>
+<li class="chapter" data-level="4.4.2" data-path="prinsip-dasar-penginderaan-jauh.html"><a href="prinsip-dasar-penginderaan-jauh.html#koreksi-geometrik"><i class="fa fa-check"></i><b>4.4.2</b> Koreksi geometrik</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="prinsip-dasar-penginderaan-jauh.html"><a href="prinsip-dasar-penginderaan-jauh.html#klasifikasi"><i class="fa fa-check"></i><b>4.5</b> Klasifikasi</a></li>
+</ul></li>
+<li class="part"><span><b>II Sistem Informasi Geografis</b></span></li>
+<li class="chapter" data-level="5" data-path="pengantar-sig.html"><a href="pengantar-sig.html"><i class="fa fa-check"></i><b>5</b> Pengantar SIG</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="pengantar-sig.html"><a href="pengantar-sig.html#definisi"><i class="fa fa-check"></i><b>5.1</b> Definisi</a></li>
+<li class="chapter" data-level="5.2" data-path="pengantar-sig.html"><a href="pengantar-sig.html#tipe-data"><i class="fa fa-check"></i><b>5.2</b> Tipe Data</a></li>
+<li class="chapter" data-level="5.3" data-path="pengantar-sig.html"><a href="pengantar-sig.html#sistem-koordinat-skala-dan-resolusi"><i class="fa fa-check"></i><b>5.3</b> Sistem koordinat, skala dan resolusi</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="visualisasi-data-di-qgis.html"><a href="visualisasi-data-di-qgis.html"><i class="fa fa-check"></i><b>6</b> Visualisasi Data di QGIS</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="visualisasi-data-di-qgis.html"><a href="visualisasi-data-di-qgis.html#grouping-dan-ordering"><i class="fa fa-check"></i><b>6.0.1</b> Grouping dan Ordering</a></li>
+<li class="chapter" data-level="6.0.2" data-path="visualisasi-data-di-qgis.html"><a href="visualisasi-data-di-qgis.html#styling"><i class="fa fa-check"></i><b>6.0.2</b> Styling</a></li>
+<li class="chapter" data-level="6.0.3" data-path="visualisasi-data-di-qgis.html"><a href="visualisasi-data-di-qgis.html#pelabelan"><i class="fa fa-check"></i><b>6.0.3</b> Pelabelan</a></li>
+<li class="chapter" data-level="6.0.4" data-path="visualisasi-data-di-qgis.html"><a href="visualisasi-data-di-qgis.html#mengelola-style"><i class="fa fa-check"></i><b>6.0.4</b> Mengelola style</a></li>
+<li class="chapter" data-level="6.0.5" data-path="visualisasi-data-di-qgis.html"><a href="visualisasi-data-di-qgis.html#menambahkan-peta-dasar"><i class="fa fa-check"></i><b>6.0.5</b> Menambahkan peta dasar</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="hari-keenam.html"><a href="hari-keenam.html"><i class="fa fa-check"></i><b>7</b> Analisis Sistem Informasi Geografis</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="hari-keenam.html"><a href="hari-keenam.html#basic-geoprocessing"><i class="fa fa-check"></i><b>7.1</b> Basic Geoprocessing</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="hari-keenam.html"><a href="hari-keenam.html#penapisan-data"><i class="fa fa-check"></i><b>7.1.1</b> Penapisan data</a></li>
+<li class="chapter" data-level="7.1.2" data-path="hari-keenam.html"><a href="hari-keenam.html#dissolve"><i class="fa fa-check"></i><b>7.1.2</b> Dissolve</a></li>
+<li class="chapter" data-level="7.1.3" data-path="hari-keenam.html"><a href="hari-keenam.html#polygon-dari-layer-extent"><i class="fa fa-check"></i><b>7.1.3</b> Polygon dari layer extent</a></li>
+<li class="chapter" data-level="7.1.4" data-path="hari-keenam.html"><a href="hari-keenam.html#reklasifikasi"><i class="fa fa-check"></i><b>7.1.4</b> Reklasifikasi</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="hari-keenam.html"><a href="hari-keenam.html#terrain-analyses"><i class="fa fa-check"></i><b>7.2</b> Terrain analyses</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="hari-keenam.html"><a href="hari-keenam.html#persiapan-1"><i class="fa fa-check"></i><b>7.2.1</b> Persiapan</a></li>
+<li class="chapter" data-level="7.2.2" data-path="hari-keenam.html"><a href="hari-keenam.html#kelerengan"><i class="fa fa-check"></i><b>7.2.2</b> Kelerengan</a></li>
+<li class="chapter" data-level="7.2.3" data-path="hari-keenam.html"><a href="hari-keenam.html#hillshade"><i class="fa fa-check"></i><b>7.2.3</b> Hillshade</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="hari-keenam.html"><a href="hari-keenam.html#density-analyses-analisis-kepadatan"><i class="fa fa-check"></i><b>7.3</b> Density Analyses (Analisis Kepadatan)</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="hari-keenam.html"><a href="hari-keenam.html#konsep"><i class="fa fa-check"></i><b>7.3.1</b> Konsep</a></li>
+<li class="chapter" data-level="7.3.2" data-path="hari-keenam.html"><a href="hari-keenam.html#membuat-heatmap-dengan-plugin-qgis"><i class="fa fa-check"></i><b>7.3.2</b> Membuat Heatmap dengan plugin QGIS</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="hari-keenam.html"><a href="hari-keenam.html#analisis-kesesuaian"><i class="fa fa-check"></i><b>7.4</b> Analisis kesesuaian</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="hari-keenam.html"><a href="hari-keenam.html#tahap-1-mendefinisikan-maksud-dan-tujuan"><i class="fa fa-check"></i><b>7.4.1</b> Tahap 1: Mendefinisikan maksud dan tujuan</a></li>
+<li class="chapter" data-level="7.4.2" data-path="hari-keenam.html"><a href="hari-keenam.html#tahap-2-analisis-ketersediaan-data-dan-definisikan-relevansi"><i class="fa fa-check"></i><b>7.4.2</b> Tahap 2 : Analisis ketersediaan data dan definisikan relevansi</a></li>
+<li class="chapter" data-level="7.4.3" data-path="hari-keenam.html"><a href="hari-keenam.html#tahap-3-definisikan-kriteria-analisis"><i class="fa fa-check"></i><b>7.4.3</b> Tahap 3 : Definisikan kriteria analisis</a></li>
+<li class="chapter" data-level="7.4.4" data-path="hari-keenam.html"><a href="hari-keenam.html#tahap-4-analisis-dan-persiapan-data"><i class="fa fa-check"></i><b>7.4.4</b> Tahap 4 : Analisis dan persiapan data</a></li>
+<li class="chapter" data-level="7.4.5" data-path="hari-keenam.html"><a href="hari-keenam.html#tahap-5-overlay-data-dan-interpretasi-hasil"><i class="fa fa-check"></i><b>7.4.5</b> Tahap 5 : Overlay data dan interpretasi hasil</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html"><i class="fa fa-check"></i><b>8</b> Pencetakan Peta</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#composer-peta"><i class="fa fa-check"></i><b>8.1</b> Composer Peta</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#halaman-pengaturan-awal"><i class="fa fa-check"></i><b>8.1.1</b> Halaman pengaturan awal</a></li>
+<li class="chapter" data-level="8.1.2" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#menambahkan-dan-mengkustomisasi-peta"><i class="fa fa-check"></i><b>8.1.2</b> Menambahkan dan mengkustomisasi peta</a></li>
+<li class="chapter" data-level="8.1.3" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#menambahkan-dan-menyesuaikan-legenda"><i class="fa fa-check"></i><b>8.1.3</b> Menambahkan dan menyesuaikan legenda</a></li>
+<li class="chapter" data-level="8.1.4" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#mengelola-komposer-cetak"><i class="fa fa-check"></i><b>8.1.4</b> Mengelola komposer cetak</a></li>
+<li class="chapter" data-level="8.1.5" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#video"><i class="fa fa-check"></i><b>8.1.5</b> Video</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#kartografi-di-r"><i class="fa fa-check"></i><b>8.2</b> Kartografi di R</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#fitur"><i class="fa fa-check"></i><b>8.2.1</b> Fitur</a></li>
+<li class="chapter" data-level="8.2.2" data-path="pencetakan-peta.html"><a href="pencetakan-peta.html#contoh"><i class="fa fa-check"></i><b>8.2.2</b> Contoh</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/firmanhadi/belajar-qgis" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Belajar QGIS Mandiri</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="akuisisi-data" class="section level1" number="3">
+<h1><span class="header-section-number">Bab 3</span> Akuisisi data</h1>
+<p>Pada bagian ini, ada beberapa hal yang perlu dipersiapkan :</p>
+<ul>
+<li><p>Siapkan koneksi internet yang stabil dan cepat.</p></li>
+<li><p>Siapkan ruang hard disk yang cukup.</p></li>
+<li><p>Pastikan Openlayers Plugin telah diinstal dan diaktifkan.</p></li>
+<li><p>Pastikan Semi Automatic Classification Plugin (SCP Plugin) telah diinstal dan diaktifkan.</p></li>
+<li><p>Kalau Anda suka minum kopi, siapkan secangkir kopi panas, kali ini proses akan cukup memakan waktu lama.</p></li>
+</ul>
+<p>SCP Plugin memudahkan kita untuk melakukan pencarian dan pemrosesan data Landsat. Berikut ini adalah tahapannya :</p>
+<ol style="list-style-type: decimal">
+<li>Tampilkan layer OpenStreetMap dengan mengklik <strong>Web -&gt; Openlayers Plugin -&gt; OpenStreetMap -&gt; OpenStreetMap</strong></li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:data001"></span>
+<img src="img/data001.png" alt="Mengaktifkan plugin OpenStreetMap" width="60%" />
+<p class="caption">
+Gambar 3.1: Mengaktifkan plugin OpenStreetMap
+</p>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li>Zoom-in ke Kota Bandung dan simpan proyek dengan mengklik <strong>Project -&gt; Save</strong>.</li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:data002"></span>
+<img src="img/data002.png" alt="Basemap OpenStreetMap telah aktif" width="60%" />
+<p class="caption">
+Gambar 3.2: Basemap OpenStreetMap telah aktif
+</p>
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li>Buka menu <strong>Download products</strong> dengan memilih <strong>SCP</strong> | <strong>Download products</strong></li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:data003"></span>
+<img src="img/data003.png" alt="Download products" width="30%" />
+<p class="caption">
+Gambar 3.3: Download products
+</p>
+</div>
+<ol start="4" style="list-style-type: decimal">
+<li>Pada tab <strong>Login data</strong> isikan User dan Password untuk ketiga penyedia layanan (EROS, Earthdata dan Sentinel)</li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:data004"></span>
+<img src="img/data004.png" alt="Isian Login data untuk mengunduh Landsat 5" width="70%" />
+<p class="caption">
+Gambar 3.4: Isian Login data untuk mengunduh Landsat 5
+</p>
+</div>
+<ol start="5" style="list-style-type: decimal">
+<li>Pilih Tab <strong>Search</strong></li>
+</ol>
+<div class="figure" style="text-align: center"><span id="fig:data005a"></span>
+<img src="img/data005a.png" alt="Isian di Tab Search" width="70%" />
+<p class="caption">
+Gambar 3.5: Isian di Tab Search
+</p>
+</div>
+<ul>
+<li>Set area dengan mengklik tanda plus (+). Aktifkan Map View, klik kiri di bagian pojok kiri atas (UL - Upper Left), klik kanan di bagian pojok kanan bawah (LR - Lower Right). Apabila sukses, maka kolom isian UL dan LR akan terisi secara otomatis.</li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:data006"></span>
+<img src="img/data006.png" alt="Set area" width="70%" />
+<p class="caption">
+Gambar 3.6: Set area
+</p>
+</div>
+<ul>
+<li><p>Pilih <strong>L4-5 TM</strong> untuk <strong>Products</strong></p></li>
+<li><p>Pilih tanggal ( <strong>Date from</strong> ) untuk rentang waktu 1990-06-01 sampai dengan 1990-07-31</p></li>
+<li><p>Pilih maksimum tutupan awan ( <strong>Max. cloud cover</strong> ) 10%</p></li>
+<li><p>Klik ikon <strong>Find</strong> untuk melakukan pencarian.</p></li>
+<li><p>Hasilnya akan muncul dalam <strong>Product List</strong>.</p></li>
+<li><p>Pilih hasil nomor 4 dan klik ikon <strong>Preview</strong>, pastikan bahwa Kota Bandung tidak tertutup awan.</p></li>
+<li><p>Hapus hasil pencarian yang lain (Nomor 1,2,3 dan 5) dengan mengklik ikon Hapus (-)</p></li>
+<li><p>Untuk opsi di bagian bawah, <strong>Only if preview in Layers</strong>, Anda dapat hapuskan tanda centang. Centang pula <strong>Preprocess Images</strong>, untuk mempermudah pra-pengolahan citra. Saya akan jelaskan lebih lanjut mengenai apa yang dilakukan pada tahapan ini dalam subbagian tersendiri.</p></li>
+<li><p>Apabila Anda ingin melakukan pencarian ulang, klik ikon Hapus Semua.</p></li>
+</ul>
+<ol start="6" style="list-style-type: decimal">
+<li><p>Abaikan Tab <strong>Download option</strong>, kita akan mengunduh semua layer (channel/band).</p></li>
+<li><p>Klik ikon <strong>Run</strong> dan pilih folder untuk menyimpan hasilnya.</p></li>
+</ol>
+<p>Tunggu proses sampai selesai. Nah, saat ini adalah waktu yang tepat untuk menyeruput kopi. Bahkan, apabila internet sedang lemot, Anda dapat melakukan pekerjaan bermanfaat lain seperti mencuci piring. Ingat, jangan terlalu banyak rebahan ya :D</p>
+<div class="figure" style="text-align: center"><span id="fig:data007"></span>
+<img src="img/data007.png" alt="Proses download citra" width="70%" />
+<p class="caption">
+Gambar 3.7: Proses download citra
+</p>
+</div>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="persiapan.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="prinsip-dasar-penginderaan-jauh.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["SIG.pdf", "SIG.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
