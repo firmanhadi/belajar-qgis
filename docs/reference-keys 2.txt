@@ -1,4 +1,3 @@
-fig:case001
 fig:fig01
 fig:fig02
 fig:fig03
@@ -166,8 +165,6 @@ fig:carto1
 fig:carto2
 fig:carto3
 intro
-studi-kasus-di-bidang-ekologi
-studi-kasus-di-bidang-pemberdayaan-masyarakat
 persiapan
 perangkat-lunak
 instalasi

@@ -43,7 +43,7 @@ Oleh karena itu, RGI merupakan salah satu solusi yang dikembangkan oleh Al-Azhar
 
 Nah, salah satu kendala dalam pelaksanaan misi lembaga amil zakat adalah belum adanya sistem informasi yang terintegrasi. Sebagai contoh, sering didapati oknum yang memanfaatkan kesempatan. Mereka mengaku sebagai mustahik dan meminta bantuan kepada satu LAZ, setelah itu meminta lagi ke LAZ lainnya dan seterusnya. Solusi saat ini yang dilakukan adalah komunikasi antar lembaga dalam satu grup Whatsapp. Apabila informasi mustahik dikumpulkan dalam satu basis data terintegrasi, berbasis Nomor Induk Kependudukan (NIK), akan mudah bagi LAZ untuk mengecek status calon mustahik.
 
-Masalah lainnya adalah belum ada yang menerapkan SIG sebagai alat bantu dalam pengelolaan data dan informasi. SIG dapat digunakan mulai dari pencarian calon mustahik, status distribusi bantuan, monitoring tingkat kemandirian mustahik dan banyak lagi (_you name it lah_).
+Masalah lainnya adalah belum ada yang menerapkan SIG sebagai alat bantu dalam pengelolaan data dan informasi. SIG dapat digunakan mulai dari pencarian calon mustahik, status distribusi bantuan, monitoring tingkat kemandirian mustahik dan banyak lagi [ _you name it lah_].
 
 Dalam studi kasus ini, kita akan ekplorasi satu demi satu, misalnya seperti berikut :
 
