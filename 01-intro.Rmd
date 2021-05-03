@@ -33,7 +33,7 @@ Hampir dua tahun yang lalu, saya berbincang dengan Mas Rayan dari LAZ Al-Azhar. 
 
 Saat diskusi, ia menyodorkan sebuah konsep yang dimodifikasi dari Banerjee dan Duflo, 2011. 
 
-```{r case001, fig.cap='Konsep dasar pemberdayaan umat',echo=FALSE, message=FALSE, warning=FALSE, out.width='60%', fig.asp=.75, fig.align='center'}
+```{r case001, fig.cap='Konsep dasar pemberdayaan umat',echo=FALSE, message=FALSE, warning=FALSE, out.width='90%', fig.asp=.85, fig.align='center'}
 knitr::include_graphics("img/concept.png")
 ```
 

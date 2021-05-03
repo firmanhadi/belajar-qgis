@@ -31,7 +31,7 @@ Hampir dua tahun yang lalu, saya berbincang dengan Mas Rayan dari LAZ Al-Azhar. 
 Saat diskusi, ia menyodorkan sebuah konsep yang dimodifikasi dari Banerjee dan Duflo, 2011. 
 
 <div class="figure" style="text-align: center">
-<img src="img/concept.png" alt="Konsep dasar pemberdayaan umat" width="60%" />
+<img src="img/concept.png" alt="Konsep dasar pemberdayaan umat" width="90%" />
 <p class="caption">(\#fig:case001)Konsep dasar pemberdayaan umat</p>
 </div>
 
