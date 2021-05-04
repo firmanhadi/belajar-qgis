@@ -167,7 +167,7 @@ fig:carto2
 fig:carto3
 intro
 studi-kasus-di-bidang-ekologi
-studi-kasus-di-bidang-pemberdayaan-masyarakat
+studi-kasus-di-pemberdayaan-masyarakat
 persiapan
 perangkat-lunak
 instalasi

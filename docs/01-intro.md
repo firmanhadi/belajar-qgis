@@ -24,7 +24,7 @@ Yang ketiga, bagaimana ia dapat membuktikan bahwa perubahan tata guna lahan berp
 
 Yang keempat adalah bagaimana ia dapat menyajikan atau memvisualisasikan hasil penelitiannya dalam bentuk tabel, gambar dan peta?
 
-## Studi kasus di bidang pemberdayaan masyarakat
+## Studi kasus di pemberdayaan masyarakat
 
 Hampir dua tahun yang lalu, saya berbincang dengan Mas Rayan dari LAZ Al-Azhar. Kala itu ia menjabat sebagai "Kepala Sekolah" di Rumah Gemilang Indonesia (RGI). Sekarang, ia diberi amanah sebagai General Manager Wakaf Al-Azhar dan BMT Al-Azhar, sebuah posisi yang terkait dengan studi kasus kali ini.
 

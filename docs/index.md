@@ -4,7 +4,7 @@ title: "Belajar QGIS Mandiri"
 author:
  - Dr. Firman Hadi^[Teknik Geodesi-Universitas Diponegoro, firmanhadi@me.com]
     
-date: "2021-05-03"
+date: "2021-05-04"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
