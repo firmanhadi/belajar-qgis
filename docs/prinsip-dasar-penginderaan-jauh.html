@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Firman Hadi" />
 
 
-<meta name="date" content="2021-05-04" />
+<meta name="date" content="2021-05-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -100,11 +100,7 @@
 <li class="chapter" data-level="4.1" data-path="prinsip-dasar-penginderaan-jauh.html"><a href="prinsip-dasar-penginderaan-jauh.html#spectral-signature"><i class="fa fa-check"></i><b>4.1</b> Spectral signature</a></li>
 <li class="chapter" data-level="4.2" data-path="prinsip-dasar-penginderaan-jauh.html"><a href="prinsip-dasar-penginderaan-jauh.html#semua-adalah-angka"><i class="fa fa-check"></i><b>4.2</b> Semua adalah angka</a></li>
 <li class="chapter" data-level="4.3" data-path="prinsip-dasar-penginderaan-jauh.html"><a href="prinsip-dasar-penginderaan-jauh.html#visualisasi-rgb"><i class="fa fa-check"></i><b>4.3</b> Visualisasi RGB</a></li>
-<li class="chapter" data-level="4.4" data-path="prinsip-dasar-penginderaan-jauh.html"><a href="prinsip-dasar-penginderaan-jauh.html#minimalisasi-kesalahan"><i class="fa fa-check"></i><b>4.4</b> Minimalisasi kesalahan</a>
-<ul>
-<li class="chapter" data-level="4.4.1" data-path="prinsip-dasar-penginderaan-jauh.html"><a href="prinsip-dasar-penginderaan-jauh.html#koreksi-radiometrik"><i class="fa fa-check"></i><b>4.4.1</b> Koreksi radiometrik</a></li>
-<li class="chapter" data-level="4.4.2" data-path="prinsip-dasar-penginderaan-jauh.html"><a href="prinsip-dasar-penginderaan-jauh.html#koreksi-geometrik"><i class="fa fa-check"></i><b>4.4.2</b> Koreksi geometrik</a></li>
-</ul></li>
+<li class="chapter" data-level="4.4" data-path="prinsip-dasar-penginderaan-jauh.html"><a href="prinsip-dasar-penginderaan-jauh.html#minimalisasi-kesalahan"><i class="fa fa-check"></i><b>4.4</b> Minimalisasi kesalahan</a></li>
 <li class="chapter" data-level="4.5" data-path="prinsip-dasar-penginderaan-jauh.html"><a href="prinsip-dasar-penginderaan-jauh.html#klasifikasi"><i class="fa fa-check"></i><b>4.5</b> Klasifikasi</a></li>
 </ul></li>
 <li class="part"><span><b>II Sistem Informasi Geografis</b></span></li>
@@ -477,21 +473,54 @@ Gambar 4.33: Angka Digital
 </div>
 <div id="visualisasi-rgb" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> Visualisasi RGB</h2>
-<!-- Sampai di sini, kita belum membahas tentang mengapa citra satelit -->
-<!-- Citra satelit memanfaatkan ragam spektrum EM yang memungkinkan kita untuk mendeteksi dan melakukan klasifikasi obyek-obyek itu berdasarkan Prinsip #1 (_spectral signature_). Ragam spektrum yang digunakan berada dalam rentang spektrum dengan panjang gelombang antara .. - ... . -->
-<!-- Spektrum EM gelombang tampak (visible), spektrum yang dapat diindera oleh mata manusia berada di rentang .. Pemanfaatan spektrum EM non-tampak (non-visible  -->
+<p>Citra satelit memanfaatkan ragam spektrum EM yang memungkinkan kita untuk mendeteksi dan melakukan klasifikasi obyek-obyek itu berdasarkan Prinsip #1 (<em>spectral signature</em>). Ragam spektrum yang digunakan berada dalam rentang spektrum dengan panjang gelombang antara <span class="math inline">\(10^(-12)\)</span> untuk sinar gamma hingga 1 kilometer untuk gelombang radio.</p>
+<div class="figure" style="text-align: center"><span id="fig:fig401"></span>
+<img src="img/em1.png" alt="Spektrum Gelombang Elektromagnetik" width="70%" />
+<p class="caption">
+Gambar 4.34: Spektrum Gelombang Elektromagnetik
+</p>
+</div>
+<p>Pengindraaan jauh memanfaatkan spektrum EM mulai dari gelombang tampak (visible) hingga gelombang mikro. Sehingga, sensor mampu mendeteksi spektrum yang jauh lebih lebar dibandingkan mata manusia yang hanya dalam rentang 0,4 - 0,7 <span class="math inline">\(\mu\)</span>m saja.</p>
+<div class="figure" style="text-align: center"><span id="fig:fig402"></span>
+<img src="img/em2.png" alt="Spektrum gelombang tampak" width="70%" />
+<p class="caption">
+Gambar 4.35: Spektrum gelombang tampak
+</p>
+</div>
+<p>Prinsip #3 Visualisasi RGB memungkinkan mata manusia melihat apa yang ditangkap oleh sensor indraja dalam rentang spektrum tidak tampak. Caranya adalah menggabungkan nilai digital dari tiga band (channel) dengan konsep warna RGB, seperti pada Gambar <a href="prinsip-dasar-penginderaan-jauh.html#fig:fig403">4.36</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:fig403"></span>
+<img src="img/rgb01.png" alt="Visualisasi RGB" width="70%" />
+<p class="caption">
+Gambar 4.36: Visualisasi RGB
+</p>
+</div>
+<p>Dengan konsep tersebut, apabila Band 3 (Red) ditempatkan sebagai komponen R, Band 2 (Green) sebagai G dan Band 1 (Blue) sebagai komponen B, maka komposit warna yang terlihat akan sama dengan mata kita. Ini disebut dengan <strong><em>True Color Composite</em></strong>.</p>
+<div class="figure" style="text-align: center"><span id="fig:fig404"></span>
+<img src="img/rgb_true.png" alt="True Color Composite" width="70%" />
+<p class="caption">
+Gambar 4.37: True Color Composite
+</p>
+</div>
+<p>Dengan visualisasi RGB, kita mampu memetakan band tidak tampak seperti Near Infra Red dalam komponen RGB. Sebagai contoh, apabiila Band 4 ditempatkan sebagai komponen R, Band 3 sebagai G dan Band 2 sebagai B, maka kita akan melihat obyek yang sama dengan warna palsu ( <strong><em>False Color Composite</em></strong> ).</p>
+<div class="figure" style="text-align: center"><span id="fig:fig405"></span>
+<img src="img/rgb_false.png" alt="False Color Composite" width="70%" />
+<p class="caption">
+Gambar 4.38: False Color Composite
+</p>
+</div>
+<p>Jadi, dari Gambar <a href="prinsip-dasar-penginderaan-jauh.html#fig:fig404">4.37</a> dan <a href="prinsip-dasar-penginderaan-jauh.html#fig:fig405">4.38</a>, kita dapat melihat perbedaan antara apa yang dilihat oleh mata manusia dan sensor indraja. Mata manusia hanya mampu melihat dengan kombinasi spektrum tampak, dengan warna daun berwarna hijau. Sensor satelit, bukan saja dapat melihat daun dengan sensor tampak, tapi juga dengan sensor tidak tampak seperti NIR.</p>
 </div>
 <div id="minimalisasi-kesalahan" class="section level2" number="4.4">
 <h2><span class="header-section-number">4.4</span> Minimalisasi kesalahan</h2>
-<div id="koreksi-radiometrik" class="section level3" number="4.4.1">
-<h3><span class="header-section-number">4.4.1</span> Koreksi radiometrik</h3>
-</div>
-<div id="koreksi-geometrik" class="section level3" number="4.4.2">
-<h3><span class="header-section-number">4.4.2</span> Koreksi geometrik</h3>
-</div>
+<p>Prinsip berikutnya dalam penginderaan jauh adalah minimalisasi kesalahan. Satelit inderaja beroperasi dalam orbit yang berjarak ratusan hingga ribuan kilometer dari permukaan bumi. Hal ini menyebabkan bias akibat pengaruh atmosfer dan pergerakan satelit serta rotasi bumi.</p>
+<p>Oleh karena itu, dalam penginderaan jauh, kita harus melakukan koreksi kesalahan akibat atmosfer dan kesalahan geometrik.</p>
+<!-- ### Koreksi radiometrik -->
+<!-- ### Koreksi geometrik -->
 </div>
 <div id="klasifikasi" class="section level2" number="4.5">
 <h2><span class="header-section-number">4.5</span> Klasifikasi</h2>
+<p>Prinsip kelima dari penginderaan jauh adalah klasifikasi. Citra satelit yang dikembangkan sejak tahun 1970-an dalam program LANDSAT, bertujuan untuk merekam sumber daya alam yang ada di permukaan bumi. Dari rekaman citra, kita hendak mengetahui wilayah mana yang termasuk ke dalam hutan, perairan, lahan terbuka dan sebagainya.</p>
+<p>Proses pendefinisian citra menjadi kelas-kelas tertentu disebut dengan klasifikasi. Secara umum, klasifikasi dapat dilakukan dengan cara tak-terbimbing ( <strong><em>unsupervised</em></strong> ) atau dengan cara terbimbing ( <strong><em>supervised</em></strong> ).</p>
 
 </div>
 </div>

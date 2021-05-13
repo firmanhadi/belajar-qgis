@@ -369,56 +369,35 @@ Citra satelit memanfaatkan ragam spektrum EM yang memungkinkan kita untuk mendet
 
 <div class="figure" style="text-align: center">
 <img src="img/em1.png" alt="Spektrum Gelombang Elektromagnetik" width="70%" />
-<p class="caption">(\#fig:fig401)Spektrum Gelombang Elektromagnetik</p>
+<p class="caption">(\#fig:fig4_01)Spektrum Gelombang Elektromagnetik</p>
 </div>
 
-Pengindraaan jauh memanfaatkan spektrum EM mulai dari gelombang tampak (visible) hingga gelombang mikro. Sehingga, sensor mampu mendeteksi spektrum yang jauh lebih lebar dibandingkan mata manusia yang hanya dalam rentang 0,4 - 0,7 $\mu$m saja. 
+Pengindraaan jauh memanfaatkan spektrum EM mulai dari gelombang tampak (visible) hingga gelombang mikro. Sehingga, sensor mampu mendeteksi spektrum yang jauh lebih lebar dibandingkan mata manusia yang hanya dalam rentang 0,4 - 0,7 $\micron$ saja. 
 
 <div class="figure" style="text-align: center">
 <img src="img/em2.png" alt="Spektrum gelombang tampak" width="70%" />
-<p class="caption">(\#fig:fig402)Spektrum gelombang tampak</p>
+<p class="caption">(\#fig:fig4_02)Spektrum gelombang tampak</p>
 </div>
 
-Prinsip #3 Visualisasi RGB memungkinkan mata manusia melihat apa yang ditangkap oleh sensor indraja dalam rentang spektrum tidak tampak. Caranya adalah menggabungkan nilai digital dari tiga band (channel) dengan konsep warna RGB, seperti pada Gambar \@ref(fig:fig403).
+Prinsip #3 Visualisasi RGB memungkinkan mata manusia melihat apa yang ditangkap oleh sensor indraja dalam rentang spektrum tidak tampak. Caranya adalah menggabungkan nilai digital dari tiga band (channel) dengan konsep warna RGB, seperti pada Gambar \@ref(fig4_03).
 
 <div class="figure" style="text-align: center">
 <img src="img/rgb01.png" alt="Visualisasi RGB" width="70%" />
-<p class="caption">(\#fig:fig403)Visualisasi RGB</p>
+<p class="caption">(\#fig:fig4_03)Visualisasi RGB</p>
 </div>
 
 Dengan konsep tersebut, apabila Band 3 (Red) ditempatkan sebagai komponen R, Band 2 (Green) sebagai G dan Band 1 (Blue) sebagai komponen B, maka komposit warna yang terlihat akan sama dengan mata kita. Ini disebut dengan ___True Color Composite___.
 
-<div class="figure" style="text-align: center">
-<img src="img/rgb_true.png" alt="True Color Composite" width="70%" />
-<p class="caption">(\#fig:fig404)True Color Composite</p>
-</div>
-
 Dengan visualisasi RGB, kita mampu memetakan band tidak tampak seperti Near Infra Red dalam komponen RGB. Sebagai contoh, apabiila Band 4 ditempatkan sebagai komponen R, Band 3 sebagai G dan Band 2 sebagai B, maka kita akan melihat obyek yang sama dengan warna palsu ( ___False Color Composite___ ).
-
-<div class="figure" style="text-align: center">
-<img src="img/rgb_false.png" alt="False Color Composite" width="70%" />
-<p class="caption">(\#fig:fig405)False Color Composite</p>
-</div>
-
-Jadi, dari Gambar \@ref(fig:fig404) dan \@ref(fig:fig405), kita dapat melihat perbedaan antara apa yang dilihat oleh mata manusia dan sensor indraja. Mata manusia hanya mampu melihat dengan kombinasi spektrum tampak, dengan warna daun berwarna hijau. Sensor satelit, bukan saja dapat melihat daun dengan sensor tampak, tapi juga dengan sensor tidak tampak seperti NIR. 
 
 ## Minimalisasi kesalahan
 
-Prinsip berikutnya dalam penginderaan jauh adalah minimalisasi kesalahan. Satelit inderaja beroperasi dalam orbit yang berjarak ratusan hingga ribuan kilometer dari permukaan bumi. Hal ini menyebabkan bias akibat pengaruh atmosfer dan pergerakan satelit serta rotasi bumi.
 
-Oleh karena itu, dalam penginderaan jauh, kita harus melakukan koreksi kesalahan akibat atmosfer dan kesalahan geometrik.
-
+### Koreksi radiometrik
 
 
-<!-- ### Koreksi radiometrik -->
-
-
-<!-- ### Koreksi geometrik -->
+### Koreksi geometrik
 
 ## Klasifikasi
-
-Prinsip kelima dari penginderaan jauh adalah klasifikasi. Citra satelit yang dikembangkan sejak tahun 1970-an dalam program LANDSAT, bertujuan untuk merekam sumber daya alam yang ada di permukaan bumi. Dari rekaman citra, kita hendak mengetahui wilayah mana yang termasuk ke dalam hutan, perairan, lahan terbuka dan sebagainya.
-
-Proses pendefinisian citra menjadi kelas-kelas tertentu disebut dengan klasifikasi. Secara umum, klasifikasi dapat dilakukan dengan cara tak-terbimbing ( ___unsupervised___ ) atau dengan cara terbimbing ( ___supervised___ ).
 
 

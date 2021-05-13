@@ -332,26 +332,55 @@ Penyimpanan informasi reflektansi dalam bentuk nilai digital, memungkinkan mata 
 
 ## Visualisasi RGB
 
+Citra satelit memanfaatkan ragam spektrum EM yang memungkinkan kita untuk mendeteksi dan melakukan klasifikasi obyek-obyek itu berdasarkan Prinsip #1 (_spectral signature_). Ragam spektrum yang digunakan berada dalam rentang spektrum dengan panjang gelombang antara $10^(-12)$ untuk sinar gamma hingga 1 kilometer untuk gelombang radio.
 
+```{r fig401, fig.cap='Spektrum Gelombang Elektromagnetik',echo=FALSE, message=FALSE, warning=FALSE, out.width='70%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("img/em1.png")
+```
 
-<!-- Sampai di sini, kita belum membahas tentang mengapa citra satelit -->
+Pengindraaan jauh memanfaatkan spektrum EM mulai dari gelombang tampak (visible) hingga gelombang mikro. Sehingga, sensor mampu mendeteksi spektrum yang jauh lebih lebar dibandingkan mata manusia yang hanya dalam rentang 0,4 - 0,7 $\mu$m saja. 
 
-<!-- Citra satelit memanfaatkan ragam spektrum EM yang memungkinkan kita untuk mendeteksi dan melakukan klasifikasi obyek-obyek itu berdasarkan Prinsip #1 (_spectral signature_). Ragam spektrum yang digunakan berada dalam rentang spektrum dengan panjang gelombang antara .. - ... . -->
+```{r fig402, fig.cap='Spektrum gelombang tampak',echo=FALSE, message=FALSE, warning=FALSE, out.width='70%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("img/em2.png")
+```
 
-<!-- Spektrum EM gelombang tampak (visible), spektrum yang dapat diindera oleh mata manusia berada di rentang .. Pemanfaatan spektrum EM non-tampak (non-visible  -->
+Prinsip #3 Visualisasi RGB memungkinkan mata manusia melihat apa yang ditangkap oleh sensor indraja dalam rentang spektrum tidak tampak. Caranya adalah menggabungkan nilai digital dari tiga band (channel) dengan konsep warna RGB, seperti pada Gambar \@ref(fig:fig403).
 
+```{r fig403, fig.cap='Visualisasi RGB',echo=FALSE, message=FALSE, warning=FALSE, out.width='70%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("img/rgb01.png")
+```
 
+Dengan konsep tersebut, apabila Band 3 (Red) ditempatkan sebagai komponen R, Band 2 (Green) sebagai G dan Band 1 (Blue) sebagai komponen B, maka komposit warna yang terlihat akan sama dengan mata kita. Ini disebut dengan ___True Color Composite___.
 
+```{r fig404, fig.cap='True Color Composite',echo=FALSE, message=FALSE, warning=FALSE, out.width='70%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("img/rgb_true.png")
+```
 
+Dengan visualisasi RGB, kita mampu memetakan band tidak tampak seperti Near Infra Red dalam komponen RGB. Sebagai contoh, apabiila Band 4 ditempatkan sebagai komponen R, Band 3 sebagai G dan Band 2 sebagai B, maka kita akan melihat obyek yang sama dengan warna palsu ( ___False Color Composite___ ).
+
+```{r fig405, fig.cap='False Color Composite',echo=FALSE, message=FALSE, warning=FALSE, out.width='70%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("img/rgb_false.png")
+```
+
+Jadi, dari Gambar \@ref(fig:fig404) dan \@ref(fig:fig405), kita dapat melihat perbedaan antara apa yang dilihat oleh mata manusia dan sensor indraja. Mata manusia hanya mampu melihat dengan kombinasi spektrum tampak, dengan warna daun berwarna hijau. Sensor satelit, bukan saja dapat melihat daun dengan sensor tampak, tapi juga dengan sensor tidak tampak seperti NIR. 
 
 ## Minimalisasi kesalahan
 
+Prinsip berikutnya dalam penginderaan jauh adalah minimalisasi kesalahan. Satelit inderaja beroperasi dalam orbit yang berjarak ratusan hingga ribuan kilometer dari permukaan bumi. Hal ini menyebabkan bias akibat pengaruh atmosfer dan pergerakan satelit serta rotasi bumi.
 
-### Koreksi radiometrik
+Oleh karena itu, dalam penginderaan jauh, kita harus melakukan koreksi kesalahan akibat atmosfer dan kesalahan geometrik.
 
 
-### Koreksi geometrik
+
+<!-- ### Koreksi radiometrik -->
+
+
+<!-- ### Koreksi geometrik -->
 
 ## Klasifikasi
+
+Prinsip kelima dari penginderaan jauh adalah klasifikasi. Citra satelit yang dikembangkan sejak tahun 1970-an dalam program LANDSAT, bertujuan untuk merekam sumber daya alam yang ada di permukaan bumi. Dari rekaman citra, kita hendak mengetahui wilayah mana yang termasuk ke dalam hutan, perairan, lahan terbuka dan sebagainya.
+
+Proses pendefinisian citra menjadi kelas-kelas tertentu disebut dengan klasifikasi. Secara umum, klasifikasi dapat dilakukan dengan cara tak-terbimbing ( ___unsupervised___ ) atau dengan cara terbimbing ( ___supervised___ ).
 
 

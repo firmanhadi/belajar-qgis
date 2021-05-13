@@ -84,6 +84,11 @@ fig:qgis028
 fig:qgis039
 fig:qgis041a
 fig:fig041
+fig:fig401
+fig:fig402
+fig:fig403
+fig:fig404
+fig:fig405
 fig:figs1
 fig:figs2
 fig:figs3
@@ -190,8 +195,6 @@ spectral-signature
 semua-adalah-angka
 visualisasi-rgb
 minimalisasi-kesalahan
-koreksi-radiometrik
-koreksi-geometrik
 klasifikasi
 pengantar-sig
 definisi
